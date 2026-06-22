@@ -155,7 +155,116 @@ nav a.active::after{
   padding:6px;
   z-index:1000;
 }
+.certification-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+margin-top:40px;
+}
 
+.cert-card{
+background:#ffffff;
+border:1px solid #e5e7eb;
+padding:28px;
+border-radius:20px;
+transition:.35s;
+position:relative;
+overflow:hidden;
+}
+
+.cert-card::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:linear-gradient(135deg,#2563eb,#38bdf8);
+transform:scaleX(0);
+transition:.35s;
+}
+
+.cert-card:hover::before{
+transform:scaleX(1);
+}
+
+.cert-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(37,99,235,.15);
+}
+
+.cert-icon{
+width:60px;
+height:60px;
+border-radius:16px;
+background:linear-gradient(135deg,#2563eb,#38bdf8);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+color:#fff;
+margin-bottom:20px;
+}
+
+.cert-card h3{
+font-size:18px;
+margin-bottom:10px;
+line-height:1.4;
+}
+
+.issuer{
+display:inline-block;
+background:#eff6ff;
+color:#2563eb;
+padding:6px 12px;
+border-radius:30px;
+font-size:13px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+.cert-card p{
+font-size:15px;
+line-height:1.7;
+color:#64748b;
+min-height:90px;
+}
+
+.cert-footer{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:20px;
+padding-top:15px;
+border-top:1px solid #e5e7eb;
+}
+
+.cert-footer span{
+font-size:13px;
+color:#64748b;
+}
+
+.cert-btn{
+background:linear-gradient(135deg,#2563eb,#38bdf8);
+color:white;
+padding:8px 14px;
+border-radius:10px;
+font-size:13px;
+font-weight:600;
+text-decoration:none;
+}
+
+@media(max-width:992px){
+.certification-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:768px){
+.certification-grid{
+grid-template-columns:1fr;
+}
+}
 .hamburger span{
   width:24px;
   height:2px;
@@ -1071,51 +1180,129 @@ technology projects.
 </section>
 
 <section id="certifications">
+
 <div class="section-head">
+<span class="index">05</span>
 <h2 class="section-title">Credentials That Back Me Up</h2>
-
 </div>
 
-<div class="cert-grid">
+<div class="certification-grid">
 
-<div class="cert-item reveal">
+<div class="cert-card reveal">
+<div class="cert-icon"><i class="fas fa-database"></i></div>
 <h3>Big Data Computing</h3>
-<p>NPTEL · 2024</p>
+<span class="issuer">NPTEL</span>
+<p>
+Advanced concepts in managing, processing and analyzing large-scale datasets using Big Data technologies.
+</p>
+<div class="cert-footer">
+<span>Issued Aug 2024</span>
+<a href="#" class="cert-btn">View Credential</a>
+</div>
 </div>
 
-<div class="cert-item reveal">
+<div class="cert-card reveal">
+<div class="cert-icon"><i class="fas fa-search"></i></div>
 <h3>SEO for Beginners</h3>
-<p>Great Learning · 2024</p>
+<span class="issuer">Great Learning</span>
+<p>
+SEO fundamentals, keyword research, content optimization and search visibility improvement.
+</p>
+<div class="cert-footer">
+<span>Issued Oct 2024</span>
+<a href="#" class="cert-btn">View Credential</a>
+</div>
 </div>
 
-<div class="cert-item reveal">
+<div class="cert-card reveal">
+<div class="cert-icon"><i class="fab fa-google"></i></div>
 <h3>Google Ads for Beginners</h3>
-<p>Coursera Project Network</p>
+<span class="issuer">Coursera</span>
+<p>
+Campaign creation, keyword optimization, ad targeting and performance analysis.
+</p>
+<div class="cert-footer">
+<span>Issued Jun 2024</span>
+<a href="#" class="cert-btn">View Credential</a>
+</div>
 </div>
 
-<div class="cert-item reveal">
-<h3>Digital Media &amp; Marketing Strategies</h3>
-<p>University of Illinois</p>
+<div class="cert-card reveal">
+<div class="cert-icon"><i class="fas fa-share-alt"></i></div>
+<h3>Hootsuite Social Media Scheduling</h3>
+<span class="issuer">Coursera</span>
+<p>
+Managing and scheduling content across multiple social media platforms efficiently.
+</p>
+<div class="cert-footer">
+<span>Issued Oct 2024</span>
+<a href="#" class="cert-btn">View Credential</a>
+</div>
 </div>
 
-<div class="cert-item reveal">
-<h3>Introduction to Digital Marketing</h3>
-<p>UC Irvine</p>
-</div>
-
-<div class="cert-item reveal">
+<div class="cert-card reveal">
+<div class="cert-icon"><i class="fas fa-cloud"></i></div>
 <h3>Google Workspace Administration</h3>
-<p>Google Cloud</p>
+<span class="issuer">Google Cloud</span>
+<p>
+User management, security settings, administration and collaboration tools.
+</p>
+<div class="cert-footer">
+<span>Issued Dec 2023</span>
+<a href="#" class="cert-btn">View Credential</a>
+</div>
 </div>
 
-<div class="cert-item reveal">
-<h3>Build Wireframes &amp; Prototypes</h3>
-<p>Google UX Design</p>
+<div class="cert-card reveal">
+<div class="cert-icon"><i class="fas fa-bullhorn"></i></div>
+<h3>Digital Media & Marketing Strategies</h3>
+<span class="issuer">University of Illinois</span>
+<p>
+Digital marketing planning, audience engagement and campaign optimization.
+</p>
+<div class="cert-footer">
+<span>Issued May 2024</span>
+<a href="#" class="cert-btn">View Credential</a>
+</div>
 </div>
 
-<div class="cert-item reveal">
-<h3>UX Design Process</h3>
-<p>Google UX Design</p>
+<div class="cert-card reveal">
+<div class="cert-icon"><i class="fas fa-chart-line"></i></div>
+<h3>Introduction to Digital Marketing</h3>
+<span class="issuer">UC Irvine</span>
+<p>
+SEO, content marketing, email marketing and social media fundamentals.
+</p>
+<div class="cert-footer">
+<span>Issued May 2024</span>
+<a href="#" class="cert-btn">View Credential</a>
+</div>
+</div>
+
+<div class="cert-card reveal">
+<div class="cert-icon"><i class="fas fa-pencil-ruler"></i></div>
+<h3>Build Wireframes & Prototypes</h3>
+<span class="issuer">Google UX Design</span>
+<p>
+Wireframing, low-fidelity prototyping and UX design workflow.
+</p>
+<div class="cert-footer">
+<span>Issued Apr 2024</span>
+<a href="#" class="cert-btn">View Credential</a>
+</div>
+</div>
+
+<div class="cert-card reveal">
+<div class="cert-icon"><i class="fas fa-palette"></i></div>
+<h3>Use Canva for Marketing Designs</h3>
+<span class="issuer">Coursera</span>
+<p>
+Creating engaging social media creatives and marketing designs using Canva.
+</p>
+<div class="cert-footer">
+<span>Issued Oct 2024</span>
+<a href="#" class="cert-btn">View Credential</a>
+</div>
 </div>
 
 </div>
