@@ -8,457 +8,668 @@
 
 <meta name="description" content="Sai Esvar P - Sales & Marketing Executive specializing in Business Development, Lead Generation, Digital Marketing, Customer Acquisition and Technology Solutions.">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
-.project-btn{
-display:inline-flex;
-align-items:center;
-gap:8px;
-background:linear-gradient(135deg,#2563eb,#1e40af);
-color:white;
-padding:12px 20px;
-border-radius:12px;
-text-decoration:none;
-font-weight:600;
-font-size:18px;
-margin-top:15px;
-transition:.3s;
-}
-
-.project-btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(37,99,235,.3);
-}
-
-.project-btn i{
-transition:transform .3s;
-}
-
-.project-btn:hover i{
-transform:translateX(4px);
-}
-
-.card h3{
-margin-bottom:12px;
-font-size:20px;
-}
-
-.card h3 i{
-transition:.3s;
-color:var(--primary);
-}
-
-.card:hover h3 i{
-transform:scale(1.2) rotate(-8deg);
-}
-
-.card h4{
-font-size:18px;
-font-weight:600;
-margin-bottom:6px;
-}
-
-.card p{
-color:#475569;
-font-size:18px;
+:root{
+  --ink:#10151f;
+  --ink-soft:#3a4250;
+  --paper:#faf8f3;
+  --panel:#ffffff;
+  --line:#e4ddcd;
+  --accent:#9c6b1f;
+  --accent-deep:#7a5117;
+  --accent-soft:#f1e6cf;
+  --serif:'Source Serif 4', Georgia, serif;
+  --sans:'Inter', sans-serif;
+  --mono:'JetBrains Mono', monospace;
 }
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-:root{
---primary:#2563eb;
---secondary:#1e40af;
---dark:#0f172a;
---light:#f8fafc;
---white:#ffffff;
-}
-
-html{
-scroll-behavior:smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
-background:#fff;
-color:var(--dark);
-line-height:1.7;
-font-size:18px;
-padding-top:78px;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.7;
+  font-size:17px;
+  padding-top:84px;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{ color:inherit; }
+
+::selection{ background:var(--accent-soft); color:var(--accent-deep); }
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent-deep);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.eyebrow::before{
+  content:'';
+  width:18px;
+  height:1px;
+  background:var(--accent);
+  display:inline-block;
 }
 
 /* NAVBAR */
 
 nav{
-position:fixed;
-top:0;
-width:100%;
-background:#fff;
-padding:18px 0;
-box-shadow:0 2px 20px rgba(0,0,0,.08);
-z-index:999;
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(250,248,243,.92);
+  backdrop-filter:blur(8px);
+  padding:0;
+  border-bottom:1px solid var(--line);
+  z-index:999;
 }
 
 .nav-inner{
-max-width:1300px;
-margin:0 auto;
-padding:0 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+  max-width:1180px;
+  margin:0 auto;
+  padding:22px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .logo{
-font-size:20px;
-font-weight:800;
-color:var(--primary);
-transition:.3s;
-cursor:default;
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:.01em;
+  color:var(--ink);
+  cursor:default;
 }
 
-.logo:hover{
-letter-spacing:.5px;
-color:var(--secondary);
+.logo span{
+  color:var(--accent-deep);
 }
 
 nav ul{
-display:flex;
-gap:25px;
-list-style:none;
+  display:flex;
+  gap:34px;
+  list-style:none;
 }
 
 nav a{
-text-decoration:none;
-color:#111;
-font-weight:600;
-font-size:18px;
-position:relative;
-padding-bottom:4px;
-transition:color .3s;
+  text-decoration:none;
+  color:var(--ink-soft);
+  font-weight:500;
+  font-size:14px;
+  letter-spacing:.02em;
+  position:relative;
+  padding-bottom:6px;
+  transition:color .25s;
 }
 
 nav a::after{
-content:'';
-position:absolute;
-left:0;
-bottom:0;
-width:0;
-height:2px;
-background:var(--primary);
-transition:width .3s;
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:1px;
+  background:var(--accent-deep);
+  transition:width .25s;
 }
 
 nav a:hover,
 nav a.active{
-color:var(--primary);
+  color:var(--ink);
 }
 
 nav a:hover::after,
 nav a.active::after{
-width:100%;
+  width:100%;
 }
 
 .hamburger{
-display:none;
-flex-direction:column;
-gap:5px;
-background:none;
-border:none;
-cursor:pointer;
-padding:6px;
-z-index:1000;
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:6px;
+  z-index:1000;
 }
 
 .hamburger span{
-width:26px;
-height:3px;
-background:var(--dark);
-border-radius:2px;
-transition:.3s;
+  width:24px;
+  height:2px;
+  background:var(--ink);
+  transition:.3s;
 }
 
-.hamburger.open span:nth-child(1){
-transform:translateY(8px) rotate(45deg);
-}
-
-.hamburger.open span:nth-child(2){
-opacity:0;
-}
-
-.hamburger.open span:nth-child(3){
-transform:translateY(-8px) rotate(-45deg);
-}
+.hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2){ opacity:0; }
+.hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 .scroll-progress{
-position:fixed;
-top:0;
-left:0;
-height:4px;
-background:linear-gradient(135deg,#2563eb,#1e40af);
-width:0%;
-z-index:1001;
-transition:width .1s;
+  position:fixed;
+  top:0;
+  left:0;
+  height:2px;
+  background:var(--accent-deep);
+  width:0%;
+  z-index:1001;
+  transition:width .1s;
 }
 
 .back-to-top{
-position:fixed;
-left:25px;
-bottom:25px;
-width:50px;
-height:50px;
-border-radius:50%;
-background:var(--primary);
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:18px;
-border:none;
-cursor:pointer;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
-opacity:0;
-visibility:hidden;
-transform:translateY(20px);
-transition:.3s;
-z-index:998;
+  position:fixed;
+  left:25px;
+  bottom:25px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:var(--ink);
+  color:var(--paper);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:15px;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 8px 22px rgba(16,21,31,.25);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(16px);
+  transition:.3s;
+  z-index:998;
 }
 
 .back-to-top.show{
-opacity:1;
-visibility:visible;
-transform:translateY(0);
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
 }
 
-.back-to-top:hover{
-background:var(--secondary);
-transform:translateY(-5px) scale(1.08);
-}
+.back-to-top:hover{ background:var(--accent-deep); }
 
 .reveal{
-opacity:0;
-transform:translateY(30px);
-transition:opacity .6s ease, transform .6s ease;
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .6s ease, transform .6s ease;
 }
 
 .reveal.visible{
-opacity:1;
-transform:translateY(0);
-}
-
-.card{
-position:relative;
-overflow:hidden;
-}
-
-.card::before{
-content:'';
-position:absolute;
-top:0;
-left:0;
-width:4px;
-height:100%;
-background:linear-gradient(135deg,#2563eb,#1e40af);
-transform:scaleY(0);
-transition:transform .3s ease;
-transform-origin:top;
-}
-
-.card:hover::before{
-transform:scaleY(1);
-}
-
-.typing-cursor{
-display:inline-block;
-width:3px;
-background:white;
-margin-left:4px;
-animation:blink 1s step-end infinite;
-}
-
-@keyframes blink{
-50%{opacity:0;}
-}
-
-.stat-counter{
-font-size:36px;
-font-weight:800;
-color:var(--primary);
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* HERO */
 
 .hero{
-min-height:calc(100vh - 78px);
-background:linear-gradient(135deg,#2563eb,#1e40af);
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:60px 10%;
-color:white;
+  min-height:calc(100vh - 84px);
+  background:var(--ink);
+  color:var(--paper);
+  display:flex;
+  align-items:center;
+  padding:80px 6%;
+  position:relative;
+  overflow:hidden;
 }
 
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(156,107,31,.18), transparent 45%),
+    repeating-linear-gradient(transparent 0 39px, rgba(255,255,255,.035) 39px 40px);
+  pointer-events:none;
+}
+
+.hero-inner{
+  max-width:1180px;
+  margin:0 auto;
+  width:100%;
+  position:relative;
+  z-index:1;
+}
+
+.hero .eyebrow{ color:#d8b97a; }
+.hero .eyebrow::before{ background:#d8b97a; }
+
 .hero h1{
-font-size:42px;
-font-weight:800;
-max-width:1000px;
-margin:auto;
+  font-family:var(--serif);
+  font-size:clamp(34px,5vw,56px);
+  font-weight:600;
+  max-width:780px;
+  line-height:1.15;
+  letter-spacing:-.01em;
 }
 
 .hero h2{
-margin:20px 0;
-font-size:20px;
-font-weight:600;
+  margin:22px 0 0;
+  font-family:var(--mono);
+  font-size:16px;
+  font-weight:400;
+  color:#d8b97a;
+  min-height:24px;
 }
 
 .hero p{
-max-width:850px;
-margin:auto;
-font-size:19px;
+  max-width:580px;
+  margin:26px 0 0;
+  font-size:17px;
+  color:#cbd0db;
 }
 
-.tagline{
-margin-top:20px;
-font-weight:600;
-font-size:18px;
-color:#dbeafe;
+.hero-stats{
+  display:flex;
+  gap:48px;
+  margin-top:46px;
+  flex-wrap:wrap;
+}
+
+.hero-stats div{
+  border-left:1px solid rgba(216,185,122,.35);
+  padding-left:16px;
+}
+
+.hero-stats strong{
+  display:block;
+  font-family:var(--serif);
+  font-size:26px;
+  font-weight:600;
+  color:var(--paper);
+}
+
+.hero-stats span{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:#9aa3b4;
+}
+
+.hero-actions{
+  margin-top:42px;
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:15px 30px;
-background:white;
-color:#2563eb;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-font-size:18px;
-margin:12px;
-transition:.3s;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:14px 26px;
+  border-radius:2px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:.02em;
+  transition:.25s;
+  border:1px solid transparent;
 }
 
-.btn:hover{
-background:var(--dark);
-color:white;
-transform:translateY(-4px);
-box-shadow:0 12px 28px rgba(0,0,0,.25);
+.btn-primary{
+  background:#d8b97a;
+  color:var(--ink);
+}
+
+.btn-primary:hover{
+  background:#fff;
+  transform:translateY(-2px);
+}
+
+.btn-ghost{
+  border:1px solid rgba(216,185,122,.4);
+  color:var(--paper);
+}
+
+.btn-ghost:hover{
+  border-color:#d8b97a;
+  background:rgba(216,185,122,.08);
 }
 
 /* SECTION */
 
 section{
-padding:90px 10%;
-max-width:1300px;
-margin:0 auto;
-border-bottom:1px solid #e2e8f0;
+  padding:100px 6%;
+  max-width:1180px;
+  margin:0 auto;
 }
 
-section:last-of-type{
-border-bottom:none;
-}
-
-.hero{
-border-bottom:none;
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:56px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:24px;
 }
 
 .section-title{
-text-align:center;
-font-size:28px;
-margin-bottom:50px;
-position:relative;
-display:table;
-left:50%;
-transform:translateX(-50%);
+  font-family:var(--serif);
+  font-size:30px;
+  font-weight:600;
+  letter-spacing:-.01em;
 }
 
-.section-title::after{
-content:'';
-display:block;
-width:60px;
-height:4px;
-background:linear-gradient(135deg,#2563eb,#1e40af);
-border-radius:4px;
-margin:14px auto 0;
+.section-num{
+  font-family:var(--mono);
+  font-size:13px;
+  color:#9a917c;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;
+  align-items:start;
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.3s;
+.about-grid p{
+  font-size:18px;
+  color:var(--ink-soft);
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(37,99,235,.18);
+.about-grid p strong{ color:var(--ink); }
+
+.about-meta{
+  border-left:1px solid var(--line);
+  padding-left:28px;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.about-meta div span{
+  display:block;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#9a917c;
+  margin-bottom:4px;
+}
+
+.about-meta div strong{
+  font-family:var(--serif);
+  font-size:17px;
+  font-weight:600;
+}
+
+/* TIMELINE (journey) */
+
+.timeline{
+  position:relative;
+  border-left:1px solid var(--line);
+  padding-left:42px;
+}
+
+.tl-item{
+  position:relative;
+  padding-bottom:54px;
+}
+
+.tl-item:last-child{ padding-bottom:0; }
+
+.tl-item::before{
+  content:'';
+  position:absolute;
+  left:-47px;
+  top:4px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--paper);
+  border:2px solid var(--accent-deep);
+}
+
+.tl-date{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.04em;
+  color:var(--accent-deep);
+  text-transform:uppercase;
+  margin-bottom:8px;
+  display:block;
+}
+
+.tl-item h3{
+  font-family:var(--serif);
+  font-size:21px;
+  font-weight:600;
+  margin-bottom:2px;
+}
+
+.tl-item h4{
+  font-size:15px;
+  font-weight:600;
+  color:var(--ink-soft);
+  margin-bottom:4px;
+}
+
+.tl-loc{
+  font-size:14px;
+  color:#8a8a8a;
+  margin-bottom:14px;
+  display:block;
+}
+
+.tl-item p.desc{
+  color:var(--ink-soft);
+  max-width:680px;
+  margin-bottom:16px;
 }
 
 .skill-tags{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-top:15px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
 }
 
 .skill-tags span{
-background:#eff6ff;
-color:#2563eb;
-padding:6px 12px;
-border-radius:20px;
-font-size:14px;
-font-weight:600;
-transition:.25s;
-cursor:default;
+  background:var(--panel);
+  border:1px solid var(--line);
+  color:var(--ink-soft);
+  padding:6px 13px;
+  border-radius:2px;
+  font-size:12.5px;
+  font-weight:500;
+  transition:.2s;
 }
 
 .skill-tags span:hover{
-background:#2563eb;
-color:white;
-transform:translateY(-2px) scale(1.05);
+  border-color:var(--accent-deep);
+  color:var(--accent-deep);
+}
+
+/* SKILLS GRID */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+
+.card{
+  background:var(--panel);
+  padding:34px 32px;
+  transition:.25s background;
+}
+
+.card:hover{ background:#fffdf8; }
+
+.card h3{
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:18px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.card h3 i{
+  color:var(--accent-deep);
+  font-size:15px;
+}
+
+/* PROJECTS */
+
+.proj-grid{
+  display:flex;
+  flex-direction:column;
+}
+
+.proj-row{
+  display:grid;
+  grid-template-columns:1fr 2fr auto;
+  gap:30px;
+  align-items:center;
+  padding:28px 0;
+  border-top:1px solid var(--line);
+}
+
+.proj-row:last-child{ border-bottom:1px solid var(--line); }
+
+.proj-row h3{
+  font-family:var(--serif);
+  font-size:19px;
+  font-weight:600;
+}
+
+.proj-row p{
+  color:var(--ink-soft);
+  font-size:15px;
+}
+
+.project-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--accent-deep);
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  white-space:nowrap;
+  transition:.2s;
+}
+
+.project-btn i:last-child{ transition:transform .25s; }
+.project-btn:hover i:last-child{ transform:translateX(4px); }
+.project-btn:hover{ color:var(--ink); }
+
+@media(max-width:768px){
+  .proj-row{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+}
+
+/* CERTIFICATIONS */
+
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:0;
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line);
+}
+
+.cert-item{
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:24px 26px;
+}
+
+.cert-item h3{
+  font-size:15.5px;
+  font-weight:600;
+  margin-bottom:4px;
+}
+
+.cert-item p{
+  font-family:var(--mono);
+  font-size:12px;
+  color:#9a917c;
+  letter-spacing:.02em;
 }
 
 /* CONTACT */
 
+.contact-section{
+  background:var(--ink);
+  color:var(--paper);
+  max-width:none;
+  padding:110px 6%;
+}
+
+.contact-inner{
+  max-width:1180px;
+  margin:0 auto;
+  text-align:left;
+}
+
+.contact-section .eyebrow{ color:#d8b97a; }
+.contact-section .eyebrow::before{ background:#d8b97a; }
+
+.contact-section h2{
+  font-family:var(--serif);
+  font-size:clamp(28px,4vw,42px);
+  font-weight:600;
+  max-width:600px;
+  margin-bottom:40px;
+}
+
 .contact-actions{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-top:30px;
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
 }
 
 .contact-btn{
-background:#2563eb;
-color:white;
-padding:14px 24px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-font-size:18px;
-display:inline-flex;
-align-items:center;
-gap:8px;
-transition:.3s;
+  background:transparent;
+  border:1px solid rgba(216,185,122,.4);
+  color:var(--paper);
+  padding:14px 24px;
+  border-radius:2px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:.25s;
 }
 
 .contact-btn:hover{
-background:var(--secondary);
-transform:translateY(-4px) scale(1.04);
-box-shadow:0 12px 28px rgba(37,99,235,.35);
+  border-color:#d8b97a;
+  background:rgba(216,185,122,.08);
+  transform:translateY(-2px);
 }
 
 /* FLOATING ICONS */
@@ -466,123 +677,114 @@ box-shadow:0 12px 28px rgba(37,99,235,.35);
 .whatsapp-btn,
 .email-btn,
 .linkedin-btn{
-position:fixed;
-right:25px;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-font-size:24px;
-text-decoration:none;
-z-index:999;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
-transition:.3s;
+  position:fixed;
+  right:25px;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+  z-index:999;
+  box-shadow:0 8px 22px rgba(16,21,31,.25);
+  transition:.25s;
 }
 
 .whatsapp-btn:hover,
 .email-btn:hover,
 .linkedin-btn:hover{
-transform:scale(1.15) rotate(8deg);
-box-shadow:0 14px 32px rgba(0,0,0,.3);
+  transform:scale(1.08);
 }
 
-.whatsapp-btn{
-bottom:25px;
-background:#25D366;
-}
-
-.email-btn{
-bottom:100px;
-background:#2563eb;
-}
-
-.linkedin-btn{
-bottom:175px;
-background:#0A66C2;
-}
+.whatsapp-btn{ bottom:25px; background:#1f8a4c; }
+.email-btn{ bottom:95px; background:var(--ink); }
+.linkedin-btn{ bottom:165px; background:#0A66C2; }
 
 footer{
-background:#0f172a;
-color:white;
-text-align:center;
-padding:50px 10% 35px;
+  background:var(--ink);
+  color:#aab1bf;
+  text-align:left;
+  padding:40px 6%;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-inner{
+  max-width:1180px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:14px;
 }
 
 footer h3{
-font-size:22px;
-margin-bottom:10px;
+  font-family:var(--serif);
+  font-size:16px;
+  color:var(--paper);
+  font-weight:600;
 }
 
 footer p{
-font-size:16px;
-color:#cbd5e1;
-max-width:600px;
-margin:6px auto;
+  font-size:13px;
 }
 
-footer p:last-child{
-margin-top:20px;
-font-size:14px;
-color:#64748b;
-border-top:1px solid rgba(255,255,255,.1);
-padding-top:20px;
+@media(max-width:900px){
+  .about-grid{ grid-template-columns:1fr; }
+  .about-meta{
+    border-left:none;
+    padding-left:0;
+    border-top:1px solid var(--line);
+    padding-top:24px;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:30px;
+  }
 }
 
 @media(max-width:768px){
+  body{ padding-top:72px; }
+  .hero{ min-height:calc(100vh - 72px); padding:64px 6%; }
+  .hero-stats{ gap:30px; }
+  .nav-inner{ padding:18px 6%; }
 
-body{
-padding-top:70px;
-}
+  nav ul{
+    position:fixed;
+    top:72px;
+    right:0;
+    background:var(--paper);
+    flex-direction:column;
+    width:240px;
+    padding:24px;
+    gap:18px;
+    border-left:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    box-shadow:-8px 8px 30px rgba(0,0,0,.08);
+    transform:translateX(100%);
+    transition:transform .3s ease;
+    display:flex;
+  }
 
-.hero{
-min-height:calc(100vh - 70px);
-}
+  nav ul.open{ transform:translateX(0); }
+  .hamburger{ display:flex; }
 
-.hero h1{
-font-size:32px;
-}
+  .timeline{ padding-left:30px; }
+  .tl-item::before{ left:-35px; }
 
-nav ul{
-position:fixed;
-top:70px;
-right:0;
-background:#fff;
-flex-direction:column;
-width:240px;
-padding:20px;
-border-radius:0 0 0 16px;
-box-shadow:-5px 5px 25px rgba(0,0,0,.15);
-transform:translateX(100%);
-transition:transform .3s ease;
-display:flex;
-}
-
-nav ul.open{
-transform:translateX(0);
-}
-
-.hamburger{
-display:flex;
-}
-
+  .footer-inner{ flex-direction:column; }
 }
 
 </style>
 </head>
-
 <body>
 
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <nav>
-
 <div class="nav-inner">
-
-<div class="logo">Sai Esvar P | Turning Leads Into Revenue</div>
-
+<div class="logo">Sai Esvar P <span>·</span> Turning Leads Into Revenue</div>
 <ul id="navLinks">
 <li><a href="#about">Why Me</a></li>
 <li><a href="#journey">How I Got Here</a></li>
@@ -591,99 +793,89 @@ display:flex;
 <li><a href="#certifications">Credentials</a></li>
 <li><a href="#contact">Let's Talk</a></li>
 </ul>
-
 <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
 <span></span>
 <span></span>
 <span></span>
 </button>
-
 </div>
-
 </nav>
 
 <section class="hero">
-
-<div>
-
-<h1>
-Driving Business Growth Through
-Sales, Marketing & Technology
-</h1>
-
-<h2>
-<span id="typedText"></span>
-</h2>
-
+<div class="hero-inner">
+<div class="eyebrow">Sales &amp; Marketing Executive</div>
+<h1>Driving business growth through sales, marketing &amp; technology.</h1>
+<h2><span id="typedText"></span></h2>
 <p>
-Helping organizations generate qualified leads,
-build strong customer relationships,
-and accelerate revenue growth through strategic
-sales and digital marketing initiatives.
+Helping organizations generate qualified leads, build strong customer
+relationships, and accelerate revenue growth through strategic sales
+and digital marketing initiatives.
 </p>
 
-<p class="tagline">
-Lead Generation • Business Development • Digital Marketing • Customer Success
-</p>
-
-<a href="#projects" class="btn">Explore My Work</a>
-
-<a href="https://github.com/esvar499"
-target="_blank"
-class="btn">
-GitHub Portfolio
-</a>
-
+<div class="hero-stats">
+<div><strong>3+</strong><span>Roles in Sales &amp; Marketing</span></div>
+<div><strong>4</strong><span>Disciplines Covered</span></div>
+<div><strong>MCA</strong><span>Technical Foundation</span></div>
 </div>
 
+<div class="hero-actions">
+<a href="#projects" class="btn btn-primary">Explore My Work</a>
+<a href="https://github.com/esvar499" target="_blank" class="btn btn-ghost">GitHub Portfolio</a>
+</div>
+</div>
 </section>
 
 <section id="about">
-
+<div class="section-head">
 <h2 class="section-title">Why Me</h2>
-
-<div class="card reveal">
-
-<p>
-MCA graduate and Sales & Marketing Executive at
+<span class="section-num">01 — Profile</span>
+</div>
+<div class="about-grid">
+<p class="reveal">
+<strong>MCA graduate</strong> and Sales &amp; Marketing Executive at
 Pramura Software Private Limited with expertise in
-Business Development, Lead Generation,
-Customer Acquisition, Digital Marketing,
-Product Strategy and Technology Solutions.
-
-Experienced in LinkedIn Prospecting,
-CRM Management, Sales Pipeline Development,
-Cold Outreach, Customer Engagement,
+Business Development, Lead Generation, Customer Acquisition,
+Digital Marketing, Product Strategy and Technology Solutions.
+Experienced in LinkedIn Prospecting, CRM Management,
+Sales Pipeline Development, Cold Outreach, Customer Engagement,
 Google Ads, SEO and Website Management.
 </p>
-
+<div class="about-meta reveal">
+<div>
+<span>Based In</span>
+<strong>Coimbatore, Tamil Nadu, India</strong>
 </div>
-
+<div>
+<span>Current Role</span>
+<strong>Sales Executive, Pramura Software</strong>
+</div>
+<div>
+<span>Focus Areas</span>
+<strong>B2B Sales · Lead Gen · Digital Marketing</strong>
+</div>
+</div>
+</div>
 </section>
 
 <section id="journey">
-
+<div class="section-head">
 <h2 class="section-title">How I Got Here</h2>
+<span class="section-num">02 — Career Timeline</span>
+</div>
 
-<div class="grid">
+<div class="timeline">
 
-<div class="card reveal">
-
+<div class="tl-item reveal">
+<span class="tl-date">Apr 2025 – Present</span>
 <h3>Pramura Software Private Limited</h3>
-
 <h4>Sales Executive</h4>
-
-<p>
-<strong>Apr 2025 – Present</strong><br>
-Coimbatore, Tamil Nadu, India · On-site
-</p>
-
-<p>
+<span class="tl-loc">Coimbatore, Tamil Nadu, India · On-site</span>
+<p class="desc">
 B2B strategist driving growth through LinkedIn and email campaigns.
 Bridging technical and sales teams to improve visibility, lead generation,
-market research, customer engagement, and product positioning for software solutions.
+market research, customer engagement, and product positioning for
+software solutions.
 </p>
-
 <div class="skill-tags">
 <span>Product Marketing</span>
 <span>Lead Generation</span>
@@ -694,26 +886,18 @@ market research, customer engagement, and product positioning for software solut
 <span>Customer Engagement</span>
 <span>B2B Sales</span>
 </div>
-
 </div>
 
-<div class="card reveal">
-
+<div class="tl-item reveal">
+<span class="tl-date">Dec 2024 – Mar 2025</span>
 <h3>Thiramai Institute of Career Skills</h3>
-
 <h4>Digital Marketing Intern</h4>
-
-<p>
-<strong>Dec 2024 – Mar 2025</strong><br>
-Chennai, Tamil Nadu · Remote
-</p>
-
-<p>
+<span class="tl-loc">Chennai, Tamil Nadu · Remote</span>
+<p class="desc">
 Created content calendars, designed social media campaigns,
 managed content publishing across Facebook, Instagram and LinkedIn,
 supported Google Ads activities and digital marketing initiatives.
 </p>
-
 <div class="skill-tags">
 <span>Digital Marketing</span>
 <span>Social Media Marketing</span>
@@ -723,26 +907,18 @@ supported Google Ads activities and digital marketing initiatives.
 <span>Web Content Writing</span>
 <span>Team Collaboration</span>
 </div>
-
 </div>
 
-<div class="card reveal">
-
+<div class="tl-item reveal">
+<span class="tl-date">Aug 2024 – Sep 2024</span>
 <h3>GeekBase Technology</h3>
-
 <h4>Web Development Intern</h4>
-
-<p>
-<strong>Aug 2024 – Sep 2024</strong><br>
-Namakkal, Tamil Nadu · Remote
+<span class="tl-loc">Namakkal, Tamil Nadu · Remote</span>
+<p class="desc">
+Worked on full-stack web development projects using Java, Spring Boot,
+MySQL, HTML, CSS and JavaScript. Enhanced coding standards, debugging
+and application development skills.
 </p>
-
-<p>
-Worked on full-stack web development projects using Java,
-Spring Boot, MySQL, HTML, CSS and JavaScript.
-Enhanced coding standards, debugging and application development skills.
-</p>
-
 <div class="skill-tags">
 <span>Java</span>
 <span>Spring Boot</span>
@@ -752,26 +928,18 @@ Enhanced coding standards, debugging and application development skills.
 <span>JavaScript</span>
 <span>Communication</span>
 </div>
-
 </div>
 
-<div class="card reveal">
-
+<div class="tl-item reveal">
+<span class="tl-date">Apr 2024 – Jun 2024</span>
 <h3>Startup201</h3>
-
 <h4>Product Manager Apprentice</h4>
-
-<p>
-<strong>Apr 2024 – Jun 2024</strong><br>
-Guwahati, Assam · Remote
-</p>
-
-<p>
+<span class="tl-loc">Guwahati, Assam · Remote</span>
+<p class="desc">
 Completed Product Management Bootcamp focused on Agile methodologies,
-stakeholder communication, product lifecycle management,
-market research and product strategy.
+stakeholder communication, product lifecycle management, market
+research and product strategy.
 </p>
-
 <div class="skill-tags">
 <span>Agile</span>
 <span>Product Strategy</span>
@@ -780,23 +948,21 @@ market research and product strategy.
 <span>Stakeholder Management</span>
 <span>Product Lifecycle</span>
 </div>
-
 </div>
 
 </div>
-
 </section>
 
 <section id="skills">
-
+<div class="section-head">
 <h2 class="section-title">What I Bring</h2>
+<span class="section-num">03 — Capabilities</span>
+</div>
 
 <div class="grid">
 
 <div class="card reveal">
-
-<h3><i class="fas fa-chart-line"></i> Sales & Business Development</h3>
-
+<h3><i class="fas fa-chart-line"></i> Sales &amp; Business Development</h3>
 <div class="skill-tags">
 <span>B2B Sales</span>
 <span>Lead Generation</span>
@@ -807,13 +973,10 @@ market research and product strategy.
 <span>Email Outreach</span>
 <span>LinkedIn Prospecting</span>
 </div>
-
 </div>
 
 <div class="card reveal">
-
 <h3><i class="fas fa-bullhorn"></i> Digital Marketing</h3>
-
 <div class="skill-tags">
 <span>SEO</span>
 <span>Google Ads</span>
@@ -822,13 +985,10 @@ market research and product strategy.
 <span>Marketing Analytics</span>
 <span>Content Creation</span>
 </div>
-
 </div>
 
 <div class="card reveal">
-
 <h3><i class="fas fa-lightbulb"></i> Product Management</h3>
-
 <div class="skill-tags">
 <span>Market Research</span>
 <span>Competitor Analysis</span>
@@ -836,13 +996,10 @@ market research and product strategy.
 <span>Agile</span>
 <span>User Stories</span>
 </div>
-
 </div>
 
 <div class="card reveal">
-
 <h3><i class="fas fa-code"></i> Technology</h3>
-
 <div class="skill-tags">
 <span>Java</span>
 <span>Spring Boot</span>
@@ -856,179 +1013,133 @@ market research and product strategy.
 <span>Canva</span>
 <span>Figma</span>
 </div>
-
 </div>
 
 </div>
-
 </section>
 
 <section id="projects">
-
+<div class="section-head">
 <h2 class="section-title">Proof of Work</h2>
+<span class="section-num">04 — Selected Projects</span>
+</div>
 
-<div class="grid">
+<div class="proj-grid">
 
-<div class="card reveal">
-
+<div class="proj-row reveal">
 <h3>Heart Disease Risk Predictor</h3>
-
 <p>
-AI-powered healthcare application developed using
-Java, Spring Boot, React.js and MySQL.
-Provides disease prediction, assessment reports,
+AI-powered healthcare application developed using Java, Spring Boot,
+React.js and MySQL. Provides disease prediction, assessment reports,
 and healthcare insights.
 </p>
-
-<a href="https://esvar499.github.io/ProjectCode/"
-target="_blank"
-class="project-btn">
-<i class="fas fa-globe"></i>
-Live Project
+<a href="https://esvar499.github.io/ProjectCode/" target="_blank" class="project-btn">
+<i class="fas fa-globe"></i> Live Project <i class="fas fa-arrow-right"></i>
 </a>
-
 </div>
 
-<div class="card reveal">
-
+<div class="proj-row reveal">
 <h3>Hospital Near You</h3>
-
 <p>
-Healthcare directory platform helping users
-discover hospitals and healthcare services
-through an intuitive user interface.
+Healthcare directory platform helping users discover hospitals
+and healthcare services through an intuitive user interface.
 </p>
-
-<a href="https://healthcurrent.netlify.app/"
-target="_blank"
-class="project-btn">
-<i class="fas fa-hospital"></i>
-View Project
+<a href="https://healthcurrent.netlify.app/" target="_blank" class="project-btn">
+<i class="fas fa-hospital"></i> View Project <i class="fas fa-arrow-right"></i>
 </a>
-
 </div>
 
-<div class="card reveal">
-
+<div class="proj-row reveal">
 <h3>GitHub Portfolio</h3>
-
 <p>
-Collection of web development, healthcare,
-marketing and technology projects.
+Collection of web development, healthcare, marketing and
+technology projects.
 </p>
-
-<a href="https://github.com/esvar499"
-target="_blank"
-class="project-btn">
-<i class="fab fa-github"></i>
-View GitHub
+<a href="https://github.com/esvar499" target="_blank" class="project-btn">
+<i class="fab fa-github"></i> View GitHub <i class="fas fa-arrow-right"></i>
 </a>
-
 </div>
 
 </div>
-
 </section>
 
 <section id="certifications">
-
+<div class="section-head">
 <h2 class="section-title">Credentials That Back Me Up</h2>
+<span class="section-num">05 — Certifications</span>
+</div>
 
-<div class="grid">
+<div class="cert-grid">
 
-<div class="card reveal">
+<div class="cert-item reveal">
 <h3>Big Data Computing</h3>
-<p>NPTEL • 2024</p>
+<p>NPTEL · 2024</p>
 </div>
 
-<div class="card reveal">
+<div class="cert-item reveal">
 <h3>SEO for Beginners</h3>
-<p>Great Learning • 2024</p>
+<p>Great Learning · 2024</p>
 </div>
 
-<div class="card reveal">
+<div class="cert-item reveal">
 <h3>Google Ads for Beginners</h3>
 <p>Coursera Project Network</p>
 </div>
 
-<div class="card reveal">
-<h3>Digital Media & Marketing Strategies</h3>
+<div class="cert-item reveal">
+<h3>Digital Media &amp; Marketing Strategies</h3>
 <p>University of Illinois</p>
 </div>
 
-<div class="card reveal">
+<div class="cert-item reveal">
 <h3>Introduction to Digital Marketing</h3>
-<p>University of California Irvine</p>
+<p>UC Irvine</p>
 </div>
 
-<div class="card reveal">
+<div class="cert-item reveal">
 <h3>Google Workspace Administration</h3>
 <p>Google Cloud</p>
 </div>
 
-<div class="card reveal">
-<h3>Build Wireframes & Prototypes</h3>
+<div class="cert-item reveal">
+<h3>Build Wireframes &amp; Prototypes</h3>
 <p>Google UX Design</p>
 </div>
 
-<div class="card reveal">
+<div class="cert-item reveal">
 <h3>UX Design Process</h3>
 <p>Google UX Design</p>
 </div>
 
 </div>
-
 </section>
 
-<section id="contact">
-
-<h2 class="section-title">Let's Talk Growth</h2>
-
+<section id="contact" class="contact-section">
+<div class="contact-inner">
+<div class="eyebrow">Get In Touch</div>
+<h2>Have a growth challenge worth solving? Let's talk revenue.</h2>
 <div class="contact-actions">
-
-<a href="https://wa.me/919842136459"
-target="_blank"
-class="contact-btn">
-<i class="fab fa-whatsapp"></i>
- WhatsApp
+<a href="https://wa.me/919842136459" target="_blank" class="contact-btn">
+<i class="fab fa-whatsapp"></i> WhatsApp
 </a>
-
-<a href="mailto:saiesvarp@gmail.com"
-class="contact-btn">
-<i class="fas fa-envelope"></i>
- Email
+<a href="mailto:saiesvarp@gmail.com" class="contact-btn">
+<i class="fas fa-envelope"></i> Email
 </a>
-
-<a href="https://linkedin.com/in/sai-esvar-p-27oct2001"
-target="_blank"
-class="contact-btn">
-<i class="fab fa-linkedin"></i>
- LinkedIn
+<a href="https://linkedin.com/in/sai-esvar-p-27oct2001" target="_blank" class="contact-btn">
+<i class="fab fa-linkedin"></i> LinkedIn
 </a>
-
 </div>
-
+</div>
 </section>
 
 <footer>
-
+<div class="footer-inner">
+<div>
 <h3>Sai Esvar P</h3>
-
-<p>
-Sales & Marketing Executive |
-Business Development Specialist
-</p>
-
-<p>
-Generating Opportunities.
-Building Relationships.
-Driving Revenue Growth.
-</p>
-
-<p>
-© 2026 All Rights Reserved
-</p>
-
+<p>Sales &amp; Marketing Executive · Business Development Specialist</p>
+</div>
+<p>© 2026 All Rights Reserved</p>
+</div>
 </footer>
 
 <a href="https://wa.me/919842136459" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
@@ -1053,79 +1164,79 @@ const hamburgerBtn = document.getElementById('hamburgerBtn');
 const navLinks = document.getElementById('navLinks');
 
 hamburgerBtn.addEventListener('click', () => {
-hamburgerBtn.classList.toggle('open');
-navLinks.classList.toggle('open');
+  hamburgerBtn.classList.toggle('open');
+  navLinks.classList.toggle('open');
 });
 
 navLinks.querySelectorAll('a').forEach(link => {
-link.addEventListener('click', () => {
-hamburgerBtn.classList.remove('open');
-navLinks.classList.remove('open');
-});
+  link.addEventListener('click', () => {
+    hamburgerBtn.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
 });
 
 const scrollProgress = document.getElementById('scrollProgress');
 
 window.addEventListener('scroll', () => {
-const scrollTop = window.scrollY;
-const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-const progress = (scrollTop / docHeight) * 100;
-scrollProgress.style.width = progress + '%';
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  scrollProgress.style.width = progress + '%';
 });
 
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('#navLinks a');
 
 window.addEventListener('scroll', () => {
-let current = '';
-sections.forEach(section => {
-const sectionTop = section.offsetTop - 100;
-if (window.scrollY >= sectionTop) {
-current = section.getAttribute('id');
-}
-});
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
 
-navAnchors.forEach(anchor => {
-anchor.classList.remove('active');
-if (anchor.getAttribute('href') === '#' + current) {
-anchor.classList.add('active');
-}
-});
+  navAnchors.forEach(anchor => {
+    anchor.classList.remove('active');
+    if (anchor.getAttribute('href') === '#' + current) {
+      anchor.classList.add('active');
+    }
+  });
 });
 
 const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
-if (window.scrollY > 400) {
-backToTop.classList.add('show');
-} else {
-backToTop.classList.remove('show');
-}
+  if (window.scrollY > 400) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
 });
 
 backToTop.addEventListener('click', () => {
-window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 const revealElements = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-revealObserver.unobserve(entry.target);
-}
-});
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
 }, { threshold: 0.15 });
 
 revealElements.forEach(el => revealObserver.observe(el));
 
 const typedTextEl = document.getElementById('typedText');
 const phrases = [
-'Sales & Marketing Executive',
-'Business Development Specialist',
-'Lead Generation Expert',
-'Customer Growth Partner'
+  'Sales & Marketing Executive',
+  'Business Development Specialist',
+  'Lead Generation Expert',
+  'Customer Growth Partner'
 ];
 
 let phraseIndex = 0;
@@ -1133,26 +1244,26 @@ let charIndex = 0;
 let isDeleting = false;
 
 function typeLoop() {
-const currentPhrase = phrases[phraseIndex];
+  const currentPhrase = phrases[phraseIndex];
 
-if (!isDeleting) {
-typedTextEl.textContent = currentPhrase.substring(0, charIndex + 1);
-charIndex++;
-if (charIndex === currentPhrase.length) {
-isDeleting = true;
-setTimeout(typeLoop, 1500);
-return;
-}
-} else {
-typedTextEl.textContent = currentPhrase.substring(0, charIndex - 1);
-charIndex--;
-if (charIndex === 0) {
-isDeleting = false;
-phraseIndex = (phraseIndex + 1) % phrases.length;
-}
-}
+  if (!isDeleting) {
+    typedTextEl.textContent = currentPhrase.substring(0, charIndex + 1);
+    charIndex++;
+    if (charIndex === currentPhrase.length) {
+      isDeleting = true;
+      setTimeout(typeLoop, 1500);
+      return;
+    }
+  } else {
+    typedTextEl.textContent = currentPhrase.substring(0, charIndex - 1);
+    charIndex--;
+    if (charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+  }
 
-setTimeout(typeLoop, isDeleting ? 50 : 90);
+  setTimeout(typeLoop, isDeleting ? 50 : 90);
 }
 
 typeLoop();
