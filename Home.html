@@ -4,38 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sai Esvar P </title>
+<title>Sai Esvar P</title>
 
 <meta name="description" content="Sai Esvar P - Sales & Marketing Executive specializing in Business Development, Lead Generation, Digital Marketing, Customer Acquisition and Technology Solutions.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
 :root{
-  --ink:#10151f;
-  --ink-soft:#3a4250;
-  --paper:#faf8f3;
+  --ink:#0c1018;
+  --ink-soft:#414a59;
+  --paper:#f8f6f0;
   --panel:#ffffff;
-  --line:#e4ddcd;
-  --accent:#9c6b1f;
-  --accent-deep:#7a5117;
-  --accent-soft:#f1e6cf;
+  --line:#e6dfcd;
+  --accent:#b9842f;
+  --accent-deep:#8a5c1d;
+  --accent2:#3a6b8a;
+  --accent-soft:#f3e7cb;
+  --grad:linear-gradient(135deg,#d8b97a 0%,#b9842f 55%,#8a5c1d 100%);
   --serif:'Source Serif 4', Georgia, serif;
   --sans:'Inter', sans-serif;
   --mono:'JetBrains Mono', monospace;
+  --shadow-sm:0 4px 14px rgba(20,16,8,.06);
+  --shadow-md:0 14px 36px rgba(20,16,8,.10);
+  --shadow-lg:0 24px 60px rgba(20,16,8,.16);
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
+*{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 
 body{
@@ -46,45 +46,46 @@ body{
   font-size:clamp(15.5px,1.1vw + .5px,17px);
   padding-top:84px;
   -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(185,132,47,.06), transparent 38%),
+    radial-gradient(circle at 92% 4%, rgba(58,107,138,.05), transparent 40%);
 }
 
 a{ color:inherit; }
-
 ::selection{ background:var(--accent-soft); color:var(--accent-deep); }
 
 .eyebrow{
   font-family:var(--mono);
   font-size:12px;
-  letter-spacing:.12em;
+  letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--accent-deep);
   display:flex;
   align-items:center;
   gap:10px;
   margin-bottom:14px;
+  font-weight:600;
 }
-
 .eyebrow::before{
   content:'';
-  width:18px;
-  height:1px;
-  background:var(--accent);
+  width:22px;
+  height:2px;
+  background:var(--grad);
   display:inline-block;
+  border-radius:2px;
 }
 
 /* NAVBAR */
-
 nav{
   position:fixed;
   top:0;
   width:100%;
-  background:rgba(250,248,243,.92);
-  backdrop-filter:blur(8px);
-  padding:0;
+  background:rgba(248,246,240,.78);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
   border-bottom:1px solid var(--line);
   z-index:999;
 }
-
 .nav-inner{
   max-width:1180px;
   margin:0 auto;
@@ -93,26 +94,17 @@ nav{
   justify-content:space-between;
   align-items:center;
 }
-
 .logo{
   font-family:var(--serif);
   font-size:18px;
-  font-weight:600;
+  font-weight:700;
   letter-spacing:.01em;
   color:var(--ink);
   cursor:default;
 }
+.logo span{ color:var(--accent-deep); }
 
-.logo span{
-  color:var(--accent-deep);
-}
-
-nav ul{
-  display:flex;
-  gap:34px;
-  list-style:none;
-}
-
+nav ul{ display:flex; gap:34px; list-style:none; }
 nav a{
   text-decoration:none;
   color:var(--ink-soft);
@@ -123,27 +115,17 @@ nav a{
   padding-bottom:6px;
   transition:color .25s;
 }
-
 nav a::after{
   content:'';
   position:absolute;
-  left:0;
-  bottom:0;
-  width:0;
-  height:1px;
-  background:var(--accent-deep);
+  left:0; bottom:0;
+  width:0; height:2px;
+  background:var(--grad);
+  border-radius:2px;
   transition:width .25s;
 }
-
-nav a:hover,
-nav a.active{
-  color:var(--ink);
-}
-
-nav a:hover::after,
-nav a.active::after{
-  width:100%;
-}
+nav a:hover, nav a.active{ color:var(--ink); }
+nav a:hover::after, nav a.active::after{ width:100%; }
 
 .hamburger{
   display:none;
@@ -155,76 +137,40 @@ nav a.active::after{
   padding:6px;
   z-index:1000;
 }
-
-.hamburger span{
-  width:24px;
-  height:2px;
-  background:var(--ink);
-  transition:.3s;
-}
-
+.hamburger span{ width:24px; height:2px; background:var(--ink); transition:.3s; border-radius:2px; }
 .hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2){ opacity:0; }
 .hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 .scroll-progress{
-  position:fixed;
-  top:0;
-  left:0;
-  height:2px;
-  background:var(--accent-deep);
-  width:0%;
-  z-index:1001;
-  transition:width .1s;
+  position:fixed; top:0; left:0; height:3px;
+  background:var(--grad);
+  width:0%; z-index:1001; transition:width .1s;
 }
 
 .back-to-top{
-  position:fixed;
-  left:25px;
-  bottom:25px;
-  width:46px;
-  height:46px;
-  border-radius:50%;
-  background:var(--ink);
-  color:var(--paper);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:15px;
-  border:none;
-  cursor:pointer;
-  box-shadow:0 8px 22px rgba(16,21,31,.25);
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(16px);
-  transition:.3s;
-  z-index:998;
+  position:fixed; left:25px; bottom:25px;
+  width:46px; height:46px; border-radius:50%;
+  background:var(--ink); color:var(--paper);
+  display:flex; align-items:center; justify-content:center;
+  font-size:15px; border:none; cursor:pointer;
+  box-shadow:var(--shadow-md);
+  opacity:0; visibility:hidden; transform:translateY(16px);
+  transition:.3s; z-index:998;
 }
-
-.back-to-top.show{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
-}
-
+.back-to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
 .back-to-top:hover{ background:var(--accent-deep); }
 
-.reveal{
-  opacity:0;
-  transform:translateY(22px);
-  transition:opacity .6s ease, transform .6s ease;
-}
-
-.reveal.visible{
-  opacity:1;
-  transform:translateY(0);
-}
+.reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.visible{ opacity:1; transform:translateY(0); }
 
 /* HERO */
-
 .hero{
   min-height:calc(100vh - 84px);
-  background:var(--ink);
+  background:
+    radial-gradient(circle at 85% 15%, rgba(185,132,47,.20), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(58,107,138,.18), transparent 40%),
+    linear-gradient(160deg,#0c1018 0%,#10151f 60%,#0c1018 100%);
   color:var(--paper);
   display:flex;
   align-items:center;
@@ -232,555 +178,283 @@ nav a.active::after{
   position:relative;
   overflow:hidden;
 }
-
 .hero::after{
   content:'';
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 88% 18%, rgba(156,107,31,.18), transparent 45%),
-    repeating-linear-gradient(transparent 0 39px, rgba(255,255,255,.035) 39px 40px);
+  position:absolute; inset:0;
+  background:repeating-linear-gradient(transparent 0 39px, rgba(255,255,255,.03) 39px 40px);
   pointer-events:none;
 }
-
-.hero-inner{
-  max-width:1180px;
-  margin:0 auto;
-  width:100%;
-  position:relative;
-  z-index:1;
-}
-
-.hero .eyebrow{ color:#d8b97a; }
-.hero .eyebrow::before{ background:#d8b97a; }
+.hero-inner{ max-width:1180px; margin:0 auto; width:100%; position:relative; z-index:1; }
+.hero .eyebrow{ color:#e2bd80; }
+.hero .eyebrow::before{ background:var(--grad); }
 
 .hero h1{
   font-family:var(--serif);
-  font-size:clamp(34px,5vw,56px);
-  font-weight:600;
-  max-width:780px;
-  line-height:1.15;
+  font-size:clamp(34px,5vw,58px);
+  font-weight:700;
+  max-width:800px;
+  line-height:1.14;
   letter-spacing:-.01em;
+  background:linear-gradient(135deg,#fff 30%,#e2bd80 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
-
 .hero h2{
   margin:22px 0 0;
   font-family:var(--mono);
   font-size:16px;
-  font-weight:400;
-  color:#d8b97a;
+  font-weight:500;
+  color:#e2bd80;
   min-height:24px;
 }
+.hero h2::after{
+  content:'|';
+  animation:blink 1s step-end infinite;
+  margin-left:2px;
+}
+@keyframes blink{ 50%{ opacity:0; } }
 
-.hero p{
-  max-width:580px;
-  margin:26px 0 0;
-  font-size:clamp(15px,1.6vw,17px);
-  color:#cbd0db;
+.hero p{ max-width:580px; margin:26px 0 0; font-size:clamp(15px,1.6vw,17px); color:#c3c9d6; }
+
+.open-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:24px;
+  padding:10px 18px;
+  border-radius:30px;
+  background:rgba(31,138,76,.12);
+  border:1px solid rgba(31,138,76,.4);
+  color:#7be3a4;
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--mono);
+  letter-spacing:.01em;
+}
+.open-badge .dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#3ddc7a;
+  box-shadow:0 0 0 0 rgba(61,220,122,.6);
+  animation:pulse 1.8s infinite;
+  flex-shrink:0;
+}
+@keyframes pulse{
+  0%{ box-shadow:0 0 0 0 rgba(61,220,122,.5); }
+  70%{ box-shadow:0 0 0 8px rgba(61,220,122,0); }
+  100%{ box-shadow:0 0 0 0 rgba(61,220,122,0); }
 }
 
-.hero-stats{
-  display:flex;
-  gap:clamp(28px,5vw,48px);
-  margin-top:clamp(32px,6vw,46px);
-  flex-wrap:wrap;
-}
-
-.hero-stats div{
-  border-left:1px solid rgba(216,185,122,.35);
-  padding-left:16px;
-}
-
+.hero-stats{ display:flex; gap:clamp(28px,5vw,48px); margin-top:clamp(32px,6vw,46px); flex-wrap:wrap; }
+.hero-stats div{ border-left:2px solid rgba(226,189,128,.4); padding-left:16px; }
 .hero-stats strong{
   display:block;
   font-family:var(--serif);
-  font-size:26px;
-  font-weight:600;
-  color:var(--paper);
+  font-size:27px;
+  font-weight:700;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
+.hero-stats span{ font-family:var(--mono); font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:#8b93a4; }
 
-.hero-stats span{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:.05em;
-  text-transform:uppercase;
-  color:#9aa3b4;
-}
-
-.hero-actions{
-  margin-top:42px;
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-}
+.hero-actions{ margin-top:42px; display:flex; gap:16px; flex-wrap:wrap; }
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:14px 26px;
-  border-radius:2px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
-  letter-spacing:.02em;
-  transition:.25s;
-  border:1px solid transparent;
+  display:inline-flex; align-items:center; gap:8px;
+  padding:14px 28px; border-radius:6px;
+  text-decoration:none; font-weight:600; font-size:14px;
+  letter-spacing:.02em; transition:.25s; border:1px solid transparent;
 }
-
-.btn-primary{
-  background:#d8b97a;
-  color:var(--ink);
-}
-
-.btn-primary:hover{
-  background:#fff;
-  transform:translateY(-2px);
-}
-
-.btn-ghost{
-  border:1px solid rgba(216,185,122,.4);
-  color:var(--paper);
-}
-
-.btn-ghost:hover{
-  border-color:#d8b97a;
-  background:rgba(216,185,122,.08);
-}
+.btn-primary{ background:var(--grad); color:#1a1206; box-shadow:0 10px 24px rgba(185,132,47,.32); }
+.btn-primary:hover{ transform:translateY(-3px); box-shadow:0 16px 32px rgba(185,132,47,.42); }
+.btn-ghost{ border:1px solid rgba(226,189,128,.4); color:var(--paper); }
+.btn-ghost:hover{ border-color:#e2bd80; background:rgba(226,189,128,.08); transform:translateY(-3px); }
 
 /* SECTION */
-
-section{
-  padding:clamp(56px,10vw,100px) clamp(20px,6vw,6%);
-  max-width:1180px;
-  margin:0 auto;
-}
-
-.section-head{
-  margin-bottom:clamp(36px,6vw,56px);
-  border-bottom:1px solid var(--line);
-  padding-bottom:20px;
-}
-
-.section-title{
-  font-family:var(--serif);
-  font-size:clamp(24px,3.2vw,30px);
-  font-weight:600;
-  letter-spacing:-.01em;
-}
+section{ padding:clamp(56px,10vw,100px) clamp(20px,6vw,6%); max-width:1180px; margin:0 auto; }
+.section-head{ margin-bottom:clamp(36px,6vw,56px); border-bottom:1px solid var(--line); padding-bottom:20px; }
+.section-title{ font-family:var(--serif); font-size:clamp(24px,3.2vw,32px); font-weight:700; letter-spacing:-.01em; }
 
 /* ABOUT */
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:clamp(30px,6vw,60px);
-  align-items:start;
-}
-
-.about-grid p{
-  font-size:clamp(16px,1.8vw,18px);
-  color:var(--ink-soft);
-}
-
+.about-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(30px,6vw,60px); align-items:start; }
+.about-grid p{ font-size:clamp(16px,1.8vw,18px); color:var(--ink-soft); }
 .about-grid p strong{ color:var(--ink); }
+.about-meta{ border-left:1px solid var(--line); padding-left:28px; display:flex; flex-direction:column; gap:22px; }
+.about-meta div span{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#9a917c; margin-bottom:4px; }
+.about-meta div strong{ font-family:var(--serif); font-size:17px; font-weight:600; }
 
-.about-meta{
-  border-left:1px solid var(--line);
-  padding-left:28px;
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-}
-
-.about-meta div span{
-  display:block;
-  font-family:var(--mono);
-  font-size:11px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:#9a917c;
-  margin-bottom:4px;
-}
-
-.about-meta div strong{
-  font-family:var(--serif);
-  font-size:17px;
-  font-weight:600;
-}
-
-/* TIMELINE (journey) */
-
-.timeline{
-  --tl-pad:clamp(24px,4vw,42px);
-  position:relative;
-  border-left:1px solid var(--line);
-  padding-left:var(--tl-pad);
-}
-
-.tl-item{
-  position:relative;
-  padding-bottom:54px;
-}
-
+/* TIMELINE */
+.timeline{ --tl-pad:clamp(24px,4vw,42px); position:relative; border-left:1px solid var(--line); padding-left:var(--tl-pad); }
+.tl-item{ position:relative; padding-bottom:54px; }
 .tl-item:last-child{ padding-bottom:0; }
-
 .tl-item::before{
   content:'';
   position:absolute;
-  left:calc(-1 * var(--tl-pad) - 5px);
-  top:4px;
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:var(--paper);
-  border:2px solid var(--accent-deep);
+  left:calc(-1 * var(--tl-pad) - 6px);
+  top:4px; width:11px; height:11px; border-radius:50%;
+  background:var(--paper); border:2px solid var(--accent-deep);
+  box-shadow:0 0 0 4px rgba(185,132,47,.12);
 }
+.tl-date{ font-family:var(--mono); font-size:12px; letter-spacing:.04em; color:var(--accent-deep); text-transform:uppercase; margin-bottom:8px; display:block; font-weight:600; }
+.tl-item h3{ font-family:var(--serif); font-size:22px; font-weight:700; margin-bottom:2px; }
+.tl-item h4{ font-size:15px; font-weight:600; color:var(--ink-soft); margin-bottom:4px; }
+.tl-loc{ font-size:14px; color:#8a8a8a; margin-bottom:14px; display:block; }
+.tl-item p.desc{ color:var(--ink-soft); max-width:680px; margin-bottom:16px; }
 
-.tl-date{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:.04em;
-  color:var(--accent-deep);
-  text-transform:uppercase;
-  margin-bottom:8px;
-  display:block;
-}
-
-.tl-item h3{
-  font-family:var(--serif);
-  font-size:21px;
-  font-weight:600;
-  margin-bottom:2px;
-}
-
-.tl-item h4{
-  font-size:15px;
-  font-weight:600;
-  color:var(--ink-soft);
-  margin-bottom:4px;
-}
-
-.tl-loc{
-  font-size:14px;
-  color:#8a8a8a;
-  margin-bottom:14px;
-  display:block;
-}
-
-.tl-item p.desc{
-  color:var(--ink-soft);
-  max-width:680px;
-  margin-bottom:16px;
-}
-
-.skill-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
+.skill-tags{ display:flex; flex-wrap:wrap; gap:8px; }
 .skill-tags span{
-  background:var(--panel);
-  border:1px solid var(--line);
-  color:var(--ink-soft);
-  padding:6px 13px;
-  border-radius:2px;
-  font-size:12.5px;
-  font-weight:500;
+  background:var(--panel); border:1px solid var(--line); color:var(--ink-soft);
+  padding:6px 13px; border-radius:20px; font-size:12.5px; font-weight:500;
   transition:.2s;
 }
-
-.skill-tags span:hover{
-  border-color:var(--accent-deep);
-  color:var(--accent-deep);
-}
+.skill-tags span:hover{ border-color:var(--accent-deep); color:var(--accent-deep); background:var(--accent-soft); transform:translateY(-1px); }
 
 /* SKILLS GRID */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-}
-
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
 .card{
-  background:var(--panel);
-  padding:34px 32px;
-  transition:.25s background;
+  background:var(--panel); padding:34px 32px; border-radius:14px;
+  border:1px solid var(--line); box-shadow:var(--shadow-sm);
+  transition:.3s;
 }
-
-.card:hover{ background:#fffdf8; }
-
-.card h3{
-  font-family:var(--serif);
-  font-size:18px;
-  font-weight:600;
-  margin-bottom:18px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
+.card:hover{ transform:translateY(-5px); box-shadow:var(--shadow-md); border-color:var(--accent); }
+.card h3{ font-family:var(--serif); font-size:18px; font-weight:700; margin-bottom:18px; display:flex; align-items:center; gap:12px; }
 .card h3 i{
-  color:var(--accent-deep);
-  font-size:15px;
+  color:#fff; font-size:14px;
+  background:var(--grad); width:34px; height:34px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
 }
 
 /* PROJECTS */
-
-.proj-grid{
-  display:flex;
-  flex-direction:column;
-}
-
+.proj-grid{ display:flex; flex-direction:column; gap:14px; }
 .proj-row{
-  display:grid;
-  grid-template-columns:1fr 2fr auto;
-  gap:clamp(16px,3vw,30px);
-  align-items:center;
-  padding:clamp(20px,3vw,28px) 0;
-  border-top:1px solid var(--line);
+  display:grid; grid-template-columns:1fr 2fr auto; gap:clamp(16px,3vw,30px);
+  align-items:center; padding:clamp(22px,3vw,28px); border:1px solid var(--line);
+  border-radius:14px; background:var(--panel); transition:.3s; box-shadow:var(--shadow-sm);
 }
-
-.proj-row:last-child{ border-bottom:1px solid var(--line); }
-
-.proj-row h3{
-  font-family:var(--serif);
-  font-size:19px;
-  font-weight:600;
-}
-
-.proj-row p{
-  color:var(--ink-soft);
-  font-size:15px;
-}
+.proj-row:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--accent); }
+.proj-row h3{ font-family:var(--serif); font-size:19px; font-weight:700; }
+.proj-row p{ color:var(--ink-soft); font-size:15px; }
 
 .project-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  color:var(--accent-deep);
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
-  white-space:nowrap;
-  transition:.2s;
+  display:inline-flex; align-items:center; gap:8px; color:var(--accent-deep);
+  text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap; transition:.2s;
 }
-
 .project-btn i:last-child{ transition:transform .25s; }
 .project-btn:hover i:last-child{ transform:translateX(4px); }
 .project-btn:hover{ color:var(--ink); }
 
-@media(max-width:768px){
-  .proj-row{
-    grid-template-columns:1fr;
-    gap:10px;
-  }
-}
+@media(max-width:768px){ .proj-row{ grid-template-columns:1fr; gap:10px; } }
 
 /* CERTIFICATIONS */
-
-.cert-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:0;
-  border-top:1px solid var(--line);
-  border-left:1px solid var(--line);
-}
-
+.cert-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; }
 .cert-item{
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  padding:24px 26px;
+  border:1px solid var(--line); border-radius:14px; padding:24px 26px;
+  background:var(--panel); box-shadow:var(--shadow-sm); transition:.3s;
+  position:relative; overflow:hidden;
 }
-
-.cert-item h3{
-  font-size:15.5px;
-  font-weight:600;
-  margin-bottom:4px;
+.cert-item::before{
+  content:''; position:absolute; top:0; left:0; width:4px; height:100%;
+  background:var(--grad); opacity:0; transition:.3s;
 }
+.cert-item:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); }
+.cert-item:hover::before{ opacity:1; }
+.cert-item h3{ font-size:15.5px; font-weight:700; margin-bottom:4px; }
+.cert-item p{ font-family:var(--mono); font-size:12px; color:#9a917c; letter-spacing:.02em; }
 
-.cert-item p{
-  font-family:var(--mono);
-  font-size:12px;
-  color:#9a917c;
-  letter-spacing:.02em;
-}
-
-/* CONTACT */
-
-.contact-section{
-  background:var(--ink);
-  color:var(--paper);
-  max-width:none;
-  padding:clamp(64px,12vw,110px) clamp(20px,6vw,6%);
-}
-
-.contact-inner{
-  max-width:1180px;
-  margin:0 auto;
-  text-align:left;
-}
-
-.contact-section .eyebrow{ color:#d8b97a; }
-.contact-section .eyebrow::before{ background:#d8b97a; }
-
-.contact-section h2{
-  font-family:var(--serif);
-  font-size:clamp(28px,4vw,42px);
-  font-weight:600;
-  max-width:600px;
-  margin-bottom:40px;
-}
-
-.contact-actions{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-}
-
-.contact-btn{
-  background:transparent;
-  border:1px solid rgba(216,185,122,.4);
-  color:var(--paper);
-  padding:14px 24px;
-  border-radius:2px;
+.view-all-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:24px;
+  color:var(--accent-deep);
   text-decoration:none;
   font-weight:600;
   font-size:14px;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  transition:.25s;
+  transition:.2s;
 }
+.view-all-link i{ transition:transform .25s; }
+.view-all-link:hover{ color:var(--ink); }
+.view-all-link:hover i{ transform:translateX(4px); }
 
-.contact-btn:hover{
-  border-color:#d8b97a;
-  background:rgba(216,185,122,.08);
-  transform:translateY(-2px);
+/* CONTACT */
+.contact-section{
+  background:linear-gradient(160deg,#0c1018 0%,#10151f 60%,#0c1018 100%);
+  color:var(--paper); max-width:none;
+  padding:clamp(64px,12vw,110px) clamp(20px,6vw,6%);
+  position:relative; overflow:hidden;
 }
+.contact-section::before{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at 80% 20%, rgba(185,132,47,.18), transparent 45%);
+  pointer-events:none;
+}
+.contact-inner{ max-width:1180px; margin:0 auto; text-align:left; position:relative; z-index:1; }
+.contact-section .eyebrow{ color:#e2bd80; }
+.contact-section .eyebrow::before{ background:var(--grad); }
+.contact-section h2{
+  font-family:var(--serif); font-size:clamp(28px,4vw,44px); font-weight:700;
+  max-width:600px; margin-bottom:20px; line-height:1.2;
+}
+.contact-note{
+  max-width:560px;
+  color:#c3c9d6;
+  font-size:15px;
+  margin-bottom:36px;
+}
+.contact-note strong{ color:#e2bd80; }
+.contact-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+.contact-btn{
+  background:rgba(255,255,255,.04); border:1px solid rgba(226,189,128,.4); color:var(--paper);
+  padding:14px 26px; border-radius:8px; text-decoration:none; font-weight:600; font-size:14px;
+  display:inline-flex; align-items:center; gap:10px; transition:.25s;
+}
+.contact-btn:hover{ border-color:#e2bd80; background:rgba(226,189,128,.1); transform:translateY(-3px); }
 
 /* FLOATING ICONS */
 
-.whatsapp-btn,
-.email-btn,
-.linkedin-btn{
-  position:fixed;
-  right:25px;
-  width:52px;
-  height:52px;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  font-size:20px;
-  text-decoration:none;
-  z-index:999;
-  box-shadow:0 8px 22px rgba(16,21,31,.25);
-  transition:.25s;
+.whatsapp-btn, .email-btn, .linkedin-btn{
+  position:fixed; right:25px; width:52px; height:52px; border-radius:50%;
+  display:flex; justify-content:center; align-items:center; color:white; font-size:20px;
+  text-decoration:none; z-index:999; box-shadow:var(--shadow-md); transition:.25s;
 }
-
-.whatsapp-btn:hover,
-.email-btn:hover,
-.linkedin-btn:hover{
-  transform:scale(1.08);
-}
-
+.whatsapp-btn:hover, .email-btn:hover, .linkedin-btn:hover{ transform:scale(1.1); }
 .whatsapp-btn{ bottom:25px; background:#1f8a4c; }
 .email-btn{ bottom:95px; background:var(--ink); }
 .linkedin-btn{ bottom:165px; background:#0A66C2; }
 
-footer{
-  background:var(--ink);
-  color:#aab1bf;
-  text-align:left;
-  padding:40px 6%;
-  border-top:1px solid rgba(255,255,255,.08);
-}
-
-.footer-inner{
-  max-width:1180px;
-  margin:0 auto;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:14px;
-}
-
-footer h3{
-  font-family:var(--serif);
-  font-size:16px;
-  color:var(--paper);
-  font-weight:600;
-}
-
-footer p{
-  font-size:13px;
-}
+footer{ background:#0c1018; color:#aab1bf; text-align:left; padding:40px 6%; border-top:1px solid rgba(255,255,255,.08); }
+.footer-inner{ max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+footer h3{ font-family:var(--serif); font-size:16px; color:var(--paper); font-weight:700; }
+footer p{ font-size:13px; }
 
 @media(max-width:900px){
   .about-grid{ grid-template-columns:1fr; }
-  .about-meta{
-    border-left:none;
-    padding-left:0;
-    border-top:1px solid var(--line);
-    padding-top:24px;
-    flex-direction:row;
-    flex-wrap:wrap;
-    gap:30px;
-  }
+  .about-meta{ border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:24px; flex-direction:row; flex-wrap:wrap; gap:30px; }
 }
-
 @media(max-width:768px){
   body{ padding-top:72px; }
   .hero{ min-height:calc(100vh - 72px); padding:64px 6%; }
   .hero-stats{ gap:30px; }
   .nav-inner{ padding:18px 6%; }
-
   nav ul{
-    position:fixed;
-    top:72px;
-    right:0;
-    background:var(--paper);
-    flex-direction:column;
-    width:240px;
-    padding:24px;
-    gap:18px;
-    border-left:1px solid var(--line);
-    border-bottom:1px solid var(--line);
+    position:fixed; top:72px; right:0; background:var(--paper);
+    flex-direction:column; width:240px; padding:24px; gap:18px;
+    border-left:1px solid var(--line); border-bottom:1px solid var(--line);
     box-shadow:-8px 8px 30px rgba(0,0,0,.08);
-    transform:translateX(100%);
-    transition:transform .3s ease;
-    display:flex;
+    transform:translateX(100%); transition:transform .3s ease; display:flex;
   }
-
   nav ul.open{ transform:translateX(0); }
   .hamburger{ display:flex; }
-
   .footer-inner{ flex-direction:column; }
 }
 @media(max-width:480px){
-  .whatsapp-btn,
-  .email-btn,
-  .linkedin-btn{
-    width:44px;
-    height:44px;
-    font-size:17px;
-    right:16px;
-  }
-  .whatsapp-btn{ bottom:16px; }
-  .email-btn{ bottom:74px; }
-  .linkedin-btn{ bottom:132px; }
-  .back-to-top{
-    width:40px;
-    height:40px;
-    left:16px;
-    bottom:16px;
-  }
+  .whatsapp-btn, .email-btn, .linkedin-btn{ width:44px; height:44px; font-size:17px; right:16px; }
+  .whatsapp-btn{ bottom:16px; } .email-btn{ bottom:74px; } .linkedin-btn{ bottom:132px; }
+  .back-to-top{ width:40px; height:40px; left:16px; bottom:16px; }
 }
 
 </style>
@@ -791,19 +465,18 @@ footer p{
 
 <nav>
 <div class="nav-inner">
-<div class="logo">Sai Esvar P </div>
+<div class="logo">Sai Esvar <span>P</span></div>
 <ul id="navLinks">
 <li><a href="#about">Why Me</a></li>
 <li><a href="#journey">How I Got Here</a></li>
+<li><a href="#education">Education</a></li>
 <li><a href="#skills">What I Bring</a></li>
 <li><a href="#projects">Proof of Work</a></li>
 <li><a href="#certifications">Credentials</a></li>
 <li><a href="#contact">Let's Talk</a></li>
 </ul>
 <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-<span></span>
-<span></span>
-<span></span>
+<span></span><span></span><span></span>
 </button>
 </div>
 </nav>
@@ -818,11 +491,14 @@ Helping organizations generate qualified leads, build strong customer
 relationships, and accelerate revenue growth through strategic sales
 and digital marketing initiatives.
 </p>
+<div class="open-badge">
+<span class="dot"></span> Open to part-time opportunities in Digital Marketing, Graphic Design &amp; Content Creation
+</div>
 
 <div class="hero-stats">
 <div><strong>3+</strong><span>Roles in Sales &amp; Marketing</span></div>
 <div><strong>4</strong><span>Disciplines Covered</span></div>
-<div><strong>MCA</strong><span>Technical Foundation</span></div>
+<div><strong>19</strong><span>Certifications (LinkedIn Verified)</span></div>
 </div>
 
 <div class="hero-actions">
@@ -835,7 +511,6 @@ and digital marketing initiatives.
 <section id="about">
 <div class="section-head">
 <h2 class="section-title">Why Me</h2>
-
 </div>
 <div class="about-grid">
 <p class="reveal">
@@ -845,21 +520,17 @@ Business Development, Lead Generation, Customer Acquisition,
 Digital Marketing, Product Strategy and Technology Solutions.
 Experienced in LinkedIn Prospecting, CRM Management,
 Sales Pipeline Development, Cold Outreach, Customer Engagement,
-Google Ads, SEO and Website Management.
+Google Ads, SEO and Website Management. I blend on-ground field
+strategy with digital growth tactics to drive technical and
+business success — and outside of work, I bring the same
+consistency to the running track as I do to a sales pipeline.
 </p>
 <div class="about-meta reveal">
-<div>
-<span>Based In</span>
-<strong>Coimbatore, Tamil Nadu, India</strong>
-</div>
-<div>
-<span>Current Role</span>
-<strong>Sales Executive, Pramura Software</strong>
-</div>
-<div>
-<span>Focus Areas</span>
-<strong>B2B Sales · Lead Gen · Digital Marketing</strong>
-</div>
+<div><span>Based In</span><strong>Coimbatore, Tamil Nadu, India</strong></div>
+<div><span>Current Role</span><strong>Sales Executive, Pramura Software</strong></div>
+<div><span>Focus Areas</span><strong>B2B Sales · Lead Gen · Digital Marketing</strong></div>
+<div><span>Network</span><strong>500+ Connections · 1,700+ Followers</strong></div>
+<div><span>Languages</span><strong>English (Working Proficiency)</strong></div>
 </div>
 </div>
 </section>
@@ -867,7 +538,6 @@ Google Ads, SEO and Website Management.
 <section id="journey">
 <div class="section-head">
 <h2 class="section-title">How I Got Here</h2>
-
 </div>
 
 <div class="timeline">
@@ -884,14 +554,9 @@ market research, customer engagement, and product positioning for
 software solutions.
 </p>
 <div class="skill-tags">
-<span>Product Marketing</span>
-<span>Lead Generation</span>
-<span>Market Research</span>
-<span>Email Campaigns</span>
-<span>LinkedIn Prospecting</span>
-<span>Web Content Writing</span>
-<span>Customer Engagement</span>
-<span>B2B Sales</span>
+<span>Product Marketing</span><span>Lead Generation</span><span>Market Research</span>
+<span>Email Campaigns</span><span>LinkedIn Prospecting</span><span>Web Content Writing</span>
+<span>Customer Engagement</span><span>B2B Sales</span>
 </div>
 </div>
 
@@ -906,13 +571,8 @@ managed content publishing across Facebook, Instagram and LinkedIn,
 supported Google Ads activities and digital marketing initiatives.
 </p>
 <div class="skill-tags">
-<span>Digital Marketing</span>
-<span>Social Media Marketing</span>
-<span>Content Creation</span>
-<span>Google Ads</span>
-<span>Content Calendar</span>
-<span>Web Content Writing</span>
-<span>Team Collaboration</span>
+<span>Digital Marketing</span><span>Social Media Marketing</span><span>Content Creation</span>
+<span>Google Ads</span><span>Content Calendar</span><span>Web Content Writing</span><span>Team Collaboration</span>
 </div>
 </div>
 
@@ -927,13 +587,8 @@ MySQL, HTML, CSS and JavaScript. Enhanced coding standards, debugging
 and application development skills.
 </p>
 <div class="skill-tags">
-<span>Java</span>
-<span>Spring Boot</span>
-<span>MySQL</span>
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>Communication</span>
+<span>Java</span><span>Spring Boot</span><span>MySQL</span><span>HTML</span>
+<span>CSS</span><span>JavaScript</span><span>Communication</span>
 </div>
 </div>
 
@@ -948,22 +603,54 @@ stakeholder communication, product lifecycle management, market
 research and product strategy.
 </p>
 <div class="skill-tags">
-<span>Agile</span>
-<span>Product Strategy</span>
-<span>CMS</span>
-<span>Team Collaboration</span>
-<span>Stakeholder Management</span>
-<span>Product Lifecycle</span>
+<span>Agile</span><span>Product Strategy</span><span>CMS</span>
+<span>Team Collaboration</span><span>Stakeholder Management</span><span>Product Lifecycle</span>
 </div>
 </div>
 
 </div>
 </section>
 
+<section id="education">
+<div class="section-head">
+<h2 class="section-title">Education</h2>
+</div>
+<div class="timeline">
+
+<div class="tl-item reveal">
+<span class="tl-date">Aug 2023 – Mar 2025</span>
+<h3>KGISL Institute of Information Management</h3>
+<h4>Master of Computer Applications (MCA) — General Sales, Merchandising &amp; Related Marketing Operations</h4>
+<span class="tl-loc">Grade: 70%</span>
+</div>
+
+<div class="tl-item reveal">
+<span class="tl-date">Jun 2020 – May 2023</span>
+<h3>KG College of Arts and Science (KGCAS)</h3>
+<h4>Bachelor of Science (BS) — Computer Science</h4>
+<span class="tl-loc">Grade: 70% · Activities: Robotic Process Automation (UiPath)</span>
+</div>
+
+</div>
+</section>
+
+<section id="achievements">
+<div class="section-head">
+<h2 class="section-title">Awards &amp; Recognition</h2>
+</div>
+
+<div class="cert-grid">
+<div class="cert-item reveal"><h3>2nd Prize — Campus Chatbot</h3><p>ICT Academy Techkton · 2022</p></div>
+<div class="cert-item reveal"><h3>Top 15 Finalist — Chatbot Expo</h3><p>ICT Bridge · 2021</p></div>
+<div class="cert-item reveal"><h3>Student Automation Project</h3><p>UiPath HyperHack · 2021</p></div>
+<div class="cert-item reveal"><h3>Campus Finalist — Digital Citizenship</h3><p>TCS iON IntelliGem · 2021</p></div>
+<div class="cert-item reveal"><h3>Java Awareness Video Creator</h3><p>Govt. of India Digital Learning Campaign</p></div>
+</div>
+</section>
+
 <section id="skills">
 <div class="section-head">
 <h2 class="section-title">What I Bring</h2>
-
 </div>
 
 <div class="grid">
@@ -971,54 +658,35 @@ research and product strategy.
 <div class="card reveal">
 <h3><i class="fas fa-chart-line"></i> Sales &amp; Business Development</h3>
 <div class="skill-tags">
-<span>B2B Sales</span>
-<span>Lead Generation</span>
-<span>Customer Acquisition</span>
-<span>CRM Management</span>
-<span>Pipeline Management</span>
-<span>Cold Calling</span>
-<span>Email Outreach</span>
-<span>LinkedIn Prospecting</span>
+<span>B2B Sales</span><span>Lead Generation</span><span>Customer Acquisition</span>
+<span>CRM Management</span><span>Pipeline Management</span><span>Cold Calling</span>
+<span>Email Outreach</span><span>LinkedIn Prospecting</span>
 </div>
 </div>
 
 <div class="card reveal">
 <h3><i class="fas fa-bullhorn"></i> Digital Marketing</h3>
 <div class="skill-tags">
-<span>SEO</span>
-<span>Google Ads</span>
-<span>Email Marketing</span>
-<span>Social Media</span>
-<span>Marketing Analytics</span>
-<span>Content Creation</span>
+<span>SEO</span><span>Google Ads</span><span>Email Marketing</span>
+<span>Social Media</span><span>Marketing Analytics</span><span>Content Creation</span>
+<span>Hootsuite Scheduling</span>
 </div>
 </div>
 
 <div class="card reveal">
 <h3><i class="fas fa-lightbulb"></i> Product Management</h3>
 <div class="skill-tags">
-<span>Market Research</span>
-<span>Competitor Analysis</span>
-<span>Roadmapping</span>
-<span>Agile</span>
-<span>User Stories</span>
+<span>Market Research</span><span>Competitor Analysis</span><span>Roadmapping</span>
+<span>Agile</span><span>User Stories</span><span>UX Design Process</span>
 </div>
 </div>
 
 <div class="card reveal">
 <h3><i class="fas fa-code"></i> Technology</h3>
 <div class="skill-tags">
-<span>Java</span>
-<span>Spring Boot</span>
-<span>React.js</span>
-<span>MySQL</span>
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>WordPress</span>
-<span>Wix</span>
-<span>Canva</span>
-<span>Figma</span>
+<span>Java</span><span>Spring Boot</span><span>React.js</span><span>MySQL</span>
+<span>HTML</span><span>CSS</span><span>JavaScript</span><span>WordPress</span>
+<span>Wix</span><span>Canva</span><span>Figma</span>
 </div>
 </div>
 
@@ -1028,7 +696,6 @@ research and product strategy.
 <section id="projects">
 <div class="section-head">
 <h2 class="section-title">Proof of Work</h2>
-
 </div>
 
 <div class="proj-grid">
@@ -1073,58 +740,34 @@ technology projects.
 <section id="certifications">
 <div class="section-head">
 <h2 class="section-title">Credentials That Back Me Up</h2>
-
 </div>
 
 <div class="cert-grid">
 
-<div class="cert-item reveal">
-<h3>Big Data Computing</h3>
-<p>NPTEL · 2024</p>
-</div>
-
-<div class="cert-item reveal">
-<h3>SEO for Beginners</h3>
-<p>Great Learning · 2024</p>
-</div>
-
-<div class="cert-item reveal">
-<h3>Google Ads for Beginners</h3>
-<p>Coursera Project Network</p>
-</div>
-
-<div class="cert-item reveal">
-<h3>Digital Media &amp; Marketing Strategies</h3>
-<p>University of Illinois</p>
-</div>
-
-<div class="cert-item reveal">
-<h3>Introduction to Digital Marketing</h3>
-<p>UC Irvine</p>
-</div>
-
-<div class="cert-item reveal">
-<h3>Google Workspace Administration</h3>
-<p>Google Cloud</p>
-</div>
-
-<div class="cert-item reveal">
-<h3>Build Wireframes &amp; Prototypes</h3>
-<p>Google UX Design</p>
-</div>
-
-<div class="cert-item reveal">
-<h3>UX Design Process</h3>
-<p>Google UX Design</p>
-</div>
+<div class="cert-item reveal"><h3>Big Data Computing</h3><p>NPTEL · Aug 2024</p></div>
+<div class="cert-item reveal"><h3>SEO for Beginners (Live Session)</h3><p>Great Learning · Oct 2024</p></div>
+<div class="cert-item reveal"><h3>Schedule Posts to Multiple Platforms</h3><p>Hootsuite · Coursera Project Network · Oct 2024</p></div>
+<div class="cert-item reveal"><h3>Google Ads for Beginners</h3><p>Coursera Project Network · Jun 2024</p></div>
+<div class="cert-item reveal"><h3>Digital Media &amp; Marketing Strategies</h3><p>University of Illinois · May 2024</p></div>
+<div class="cert-item reveal"><h3>Introduction to Digital Marketing</h3><p>UC Irvine · May 2024</p></div>
+<div class="cert-item reveal"><h3>Google Workspace Administration</h3><p>Google Cloud · Dec 2023</p></div>
+<div class="cert-item reveal"><h3>Build Wireframes &amp; Prototypes</h3><p>Google UX Design · Apr 2024</p></div>
+<div class="cert-item reveal"><h3>UX Design Process</h3><p>Google UX Design · Apr 2024</p></div>
+<div class="cert-item reveal"><h3>Canva for Social Media Marketing</h3><p>Coursera Project Network · Oct 2024</p></div>
 
 </div>
+<a href="https://www.linkedin.com/in/sai-esvar-p-27oct2001/details/certifications/" target="_blank" class="view-all-link">View all 19 certifications on LinkedIn <i class="fas fa-arrow-right"></i></a>
 </section>
 
 <section id="contact" class="contact-section">
 <div class="contact-inner">
 <div class="eyebrow">Get In Touch</div>
 <h2>Have a growth challenge worth solving? Let's talk revenue.</h2>
+<p class="contact-note">
+Also open to <strong>part-time &amp; freelance opportunities</strong> in
+Digital Marketing, Graphic Design, and Content Creation — if you've got
+a project that fits, let's connect.
+</p>
 <div class="contact-actions">
 <a href="https://wa.me/919842136459" target="_blank" class="contact-btn">
 <i class="fab fa-whatsapp"></i> WhatsApp
@@ -1149,21 +792,11 @@ technology projects.
 </div>
 </footer>
 
-<a href="https://wa.me/919842136459" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
-<i class="fab fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/919842136459" target="_blank" class="whatsapp-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:saiesvarp@gmail.com" class="email-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+<a href="https://linkedin.com/in/sai-esvar-p-27oct2001" target="_blank" class="linkedin-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
 
-<a href="mailto:saiesvarp@gmail.com" class="email-btn" aria-label="Email">
-<i class="fas fa-envelope"></i>
-</a>
-
-<a href="https://linkedin.com/in/sai-esvar-p-27oct2001" target="_blank" class="linkedin-btn" aria-label="LinkedIn">
-<i class="fab fa-linkedin"></i>
-</a>
-
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-<i class="fas fa-arrow-up"></i>
-</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
 <script>
 
@@ -1183,7 +816,6 @@ navLinks.querySelectorAll('a').forEach(link => {
 });
 
 const scrollProgress = document.getElementById('scrollProgress');
-
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -1193,40 +825,26 @@ window.addEventListener('scroll', () => {
 
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('#navLinks a');
-
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 100;
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute('id');
-    }
+    if (window.scrollY >= sectionTop) current = section.getAttribute('id');
   });
-
   navAnchors.forEach(anchor => {
     anchor.classList.remove('active');
-    if (anchor.getAttribute('href') === '#' + current) {
-      anchor.classList.add('active');
-    }
+    if (anchor.getAttribute('href') === '#' + current) anchor.classList.add('active');
   });
 });
 
 const backToTop = document.getElementById('backToTop');
-
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) {
-    backToTop.classList.add('show');
-  } else {
-    backToTop.classList.remove('show');
-  }
+  if (window.scrollY > 400) backToTop.classList.add('show');
+  else backToTop.classList.remove('show');
 });
-
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 const revealElements = document.querySelectorAll('.reveal');
-
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1235,7 +853,6 @@ const revealObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.15 });
-
 revealElements.forEach(el => revealObserver.observe(el));
 
 const typedTextEl = document.getElementById('typedText');
@@ -1245,14 +862,10 @@ const phrases = [
   'Lead Generation Expert',
   'Customer Growth Partner'
 ];
-
-let phraseIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+let phraseIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeLoop() {
   const currentPhrase = phrases[phraseIndex];
-
   if (!isDeleting) {
     typedTextEl.textContent = currentPhrase.substring(0, charIndex + 1);
     charIndex++;
@@ -1269,10 +882,8 @@ function typeLoop() {
       phraseIndex = (phraseIndex + 1) % phrases.length;
     }
   }
-
   setTimeout(typeLoop, isDeleting ? 50 : 90);
 }
-
 typeLoop();
 
 </script>
