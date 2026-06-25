@@ -14,6 +14,63 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DNGTZKEPW3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DNGTZKEPW3');
+</script>
+
+<!--
+=====================================================================
+  VISITOR TRACKER + DAILY EMAIL REPORT — SETUP INSTRUCTIONS
+=====================================================================
+  This page now tracks visits, time-on-page, and contact-button
+  clicks in the visitor's browser (localStorage), and emails YOU
+  (saiesvarp@gmail.com) a daily summary using EmailJS — a free
+  service that lets a static webpage send email with no backend.
+
+  TO ACTIVATE (takes ~5 minutes, one-time):
+  1. Go to https://www.emailjs.com and create a free account.
+  2. Add an "Email Service" (e.g. connect your Gmail). Note the
+     SERVICE_ID it gives you.
+  3. Create an "Email Template" with variables like:
+       {{visits}} {{report_date}} {{whatsapp_clicks}}
+       {{email_clicks}} {{linkedin_clicks}} {{project_clicks}}
+       {{avg_time}}
+     Note the TEMPLATE_ID.
+  4. Go to Account > General and copy your PUBLIC_KEY.
+  5. In the <script> block near the bottom of this file
+     (search for "EMAILJS CONFIG"), paste in:
+       - YOUR_PUBLIC_KEY
+       - YOUR_SERVICE_ID
+       - YOUR_TEMPLATE_ID
+
+  HOW IT WORKS:
+  - Every visit increments today's counters in the visitor's
+    localStorage (this is per-browser, not a central database —
+    see note below).
+  - On the FIRST visit of a NEW calendar day, the script checks if
+    yesterday's report was already sent. If not, it emails you
+    yesterday's totals, then clears that day's data.
+  - Because there's no server, the email is only sent when SOMEONE
+    visits your page after midnight. If your site gets daily
+    traffic (even just you checking it), you'll get a report
+    each day with a slight delay until the next visit occurs.
+
+  LIMITATION (important): localStorage is per-browser/per-device.
+  This tracker counts visits from each unique browser separately —
+  it is NOT a unified cross-visitor analytics database. For true
+  server-side analytics across all visitors, you'd need a backend
+  (e.g. a small serverless function + database) rather than a
+  pure static HTML page. This solution is a lightweight personal
+  tracker, good for getting a daily pulse, not analytics-grade.
+=====================================================================
+-->
+
 <style>
 
 :root{
@@ -707,7 +764,7 @@ AI-powered healthcare application developed using Java, Spring Boot,
 React.js and MySQL. Provides disease prediction, assessment reports,
 and healthcare insights.
 </p>
-<a href="https://esvar499.github.io/ProjectCode/" target="_blank" class="project-btn">
+<a href="https://esvar499.github.io/ProjectCode/" target="_blank" class="project-btn" data-track="project_click">
 <i class="fas fa-globe"></i> Live Project <i class="fas fa-arrow-right"></i>
 </a>
 </div>
@@ -718,7 +775,7 @@ and healthcare insights.
 Healthcare directory platform helping users discover hospitals
 and healthcare services through an intuitive user interface.
 </p>
-<a href="https://healthcurrent.netlify.app/" target="_blank" class="project-btn">
+<a href="https://healthcurrent.netlify.app/" target="_blank" class="project-btn" data-track="project_click">
 <i class="fas fa-hospital"></i> View Project <i class="fas fa-arrow-right"></i>
 </a>
 </div>
@@ -729,7 +786,7 @@ and healthcare services through an intuitive user interface.
 Collection of web development, healthcare, marketing and
 technology projects.
 </p>
-<a href="https://github.com/esvar499" target="_blank" class="project-btn">
+<a href="https://github.com/esvar499" target="_blank" class="project-btn" data-track="project_click">
 <i class="fab fa-github"></i> View GitHub <i class="fas fa-arrow-right"></i>
 </a>
 </div>
@@ -769,13 +826,13 @@ Digital Marketing, Graphic Design, and Content Creation — if you've got
 a project that fits, let's connect.
 </p>
 <div class="contact-actions">
-<a href="https://wa.me/919842136459" target="_blank" class="contact-btn">
+<a href="https://wa.me/919842136459" target="_blank" class="contact-btn" data-track="whatsapp_click">
 <i class="fab fa-whatsapp"></i> WhatsApp
 </a>
-<a href="mailto:saiesvarp@gmail.com" class="contact-btn">
+<a href="mailto:saiesvarp@gmail.com" class="contact-btn" data-track="email_click">
 <i class="fas fa-envelope"></i> Email
 </a>
-<a href="https://linkedin.com/in/sai-esvar-p-27oct2001" target="_blank" class="contact-btn">
+<a href="https://linkedin.com/in/sai-esvar-p-27oct2001" target="_blank" class="contact-btn" data-track="linkedin_click">
 <i class="fab fa-linkedin"></i> LinkedIn
 </a>
 </div>
@@ -792,11 +849,14 @@ a project that fits, let's connect.
 </div>
 </footer>
 
-<a href="https://wa.me/919842136459" target="_blank" class="whatsapp-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<a href="mailto:saiesvarp@gmail.com" class="email-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
-<a href="https://linkedin.com/in/sai-esvar-p-27oct2001" target="_blank" class="linkedin-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+<a href="https://wa.me/919842136459" target="_blank" class="whatsapp-btn" aria-label="WhatsApp" data-track="whatsapp_click"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:saiesvarp@gmail.com" class="email-btn" aria-label="Email" data-track="email_click"><i class="fas fa-envelope"></i></a>
+<a href="https://linkedin.com/in/sai-esvar-p-27oct2001" target="_blank" class="linkedin-btn" aria-label="LinkedIn" data-track="linkedin_click"><i class="fab fa-linkedin"></i></a>
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- EmailJS SDK — required for the daily tracker email -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
 
@@ -885,6 +945,127 @@ function typeLoop() {
   setTimeout(typeLoop, isDeleting ? 50 : 90);
 }
 typeLoop();
+
+/* =====================================================================
+   VISITOR TRACKER + DAILY EMAIL REPORT
+   ===================================================================== */
+(function () {
+
+  // ---------- EMAILJS CONFIG: fill these in (see instructions in <head>) ----------
+  const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";
+  const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
+  const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+  const REPORT_TO_EMAIL     = "saiesvarp@gmail.com";
+  // -----------------------------------------------------------------------------
+
+  const STORAGE_KEY = "sep_tracker_v1";
+  const today = new Date();
+  const todayKey = today.toISOString().slice(0, 10); // YYYY-MM-DD
+
+  function loadData() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveData(data) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    } catch (e) { /* storage unavailable, fail silently */ }
+  }
+
+  let store = loadData();
+
+  // store.days = { "2026-06-25": { visits, whatsapp_click, email_click, linkedin_click, project_click, totalTimeMs, sessions } }
+  // store.lastSentDate = "2026-06-24"  (last day a report was emailed for)
+  if (!store.days) store.days = {};
+  if (!store.days[todayKey]) {
+    store.days[todayKey] = {
+      visits: 0, whatsapp_click: 0, email_click: 0,
+      linkedin_click: 0, project_click: 0, totalTimeMs: 0, sessions: 0
+    };
+  }
+
+  // Record this visit
+  store.days[todayKey].visits += 1;
+  store.days[todayKey].sessions += 1;
+  saveData(store);
+
+  // Track time on page
+  const visitStart = Date.now();
+  window.addEventListener("beforeunload", function () {
+    const elapsed = Date.now() - visitStart;
+    const d = loadData();
+    if (d.days && d.days[todayKey]) {
+      d.days[todayKey].totalTimeMs += elapsed;
+      saveData(d);
+    }
+  });
+
+  // Track contact / project clicks
+  document.querySelectorAll("[data-track]").forEach(el => {
+    el.addEventListener("click", function () {
+      const key = el.getAttribute("data-track");
+      const d = loadData();
+      if (d.days && d.days[todayKey] && d.days[todayKey][key] !== undefined) {
+        d.days[todayKey][key] += 1;
+        saveData(d);
+      }
+    });
+  });
+
+  // ---------- Daily email dispatch ----------
+  function formatMs(ms) {
+    const totalSec = Math.round(ms / 1000);
+    const m = Math.floor(totalSec / 60);
+    const s = totalSec % 60;
+    return m + "m " + s + "s";
+  }
+
+  function maybeSendDailyReport() {
+    if (typeof emailjs === "undefined") return; // SDK not loaded / blocked
+    if (EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY") return; // not configured yet
+
+    const d = loadData();
+    const dayKeys = Object.keys(d.days || {}).filter(k => k !== todayKey).sort();
+    if (dayKeys.length === 0) return;
+
+    // Find the most recent past day not yet sent
+    const pendingKey = dayKeys[dayKeys.length - 1];
+    if (d.lastSentDate === pendingKey) return; // already sent
+
+    const stats = d.days[pendingKey];
+    if (!stats) return;
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      to_email: REPORT_TO_EMAIL,
+      report_date: pendingKey,
+      visits: stats.visits,
+      whatsapp_clicks: stats.whatsapp_click,
+      email_clicks: stats.email_click,
+      linkedin_clicks: stats.linkedin_click,
+      project_clicks: stats.project_click,
+      avg_time: stats.sessions ? formatMs(stats.totalTimeMs / stats.sessions) : "0m 0s"
+    }).then(function () {
+      const fresh = loadData();
+      fresh.lastSentDate = pendingKey;
+      delete fresh.days[pendingKey]; // clear sent day's data
+      saveData(fresh);
+    }).catch(function (err) {
+      console.warn("Daily tracker email failed:", err);
+    });
+  }
+
+  // Run shortly after page load so it doesn't block rendering
+  window.addEventListener("load", function () {
+    setTimeout(maybeSendDailyReport, 1500);
+  });
+
+})();
 
 </script>
 
