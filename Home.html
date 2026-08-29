@@ -437,6 +437,29 @@ section{ padding:clamp(56px,10vw,100px) clamp(20px,6vw,6%); max-width:1180px; ma
 .view-all-link:hover{ color:var(--ink); }
 .view-all-link:hover i{ transform:translateX(4px); }
 
+
+/* STRAVA */
+.strava-section{background:linear-gradient(160deg,#fff 0%,#f8f6f0 100%);}
+.strava-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch}
+.strava-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:var(--shadow-sm);transition:.3s}
+.strava-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--accent)}
+.strava-profile{display:flex;gap:18px;align-items:center;margin-bottom:22px}
+.strava-avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)}
+.strava-profile h3{font-family:var(--serif);font-size:24px;margin-bottom:2px}
+.strava-profile p{color:var(--ink-soft);font-size:14px}
+.strava-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.strava-stat{padding:15px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.strava-stat strong{display:block;font-family:var(--serif);font-size:23px;color:var(--accent-deep)}
+.strava-stat span{font-family:var(--mono);font-size:10px;text-transform:uppercase;color:#9a917c;letter-spacing:.05em}
+.strava-best{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.strava-best div{padding:13px;border-bottom:1px solid var(--line)}
+.strava-best strong{display:block;font-size:18px}
+.strava-best span{font-family:var(--mono);font-size:11px;color:#9a917c}
+.strava-actions{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+.strava-btn{display:inline-flex;align-items:center;gap:8px;background:#FC5200;color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600}
+.strava-btn.secondary{background:var(--ink)}
+@media(max-width:768px){.strava-grid{grid-template-columns:1fr}.strava-stats{grid-template-columns:1fr 1fr}}
+
 /* CONTACT */
 .contact-section{
   background:linear-gradient(160deg,#0c1018 0%,#10151f 60%,#0c1018 100%);
@@ -528,6 +551,7 @@ footer p{ font-size:13px; }
 <li><a href="#journey">How I Got Here</a></li>
 <li><a href="#education">Education</a></li>
 <li><a href="#skills">What I Bring</a></li>
+<li><a href="#strava">Running</a></li>
 <li><a href="#projects">Proof of Work</a></li>
 <li><a href="#certifications">Credentials</a></li>
 <li><a href="#contact">Let's Talk</a></li>
@@ -582,6 +606,13 @@ strategy with digital growth tactics to drive technical and
 business success — and outside of work, I bring the same
 consistency to the running track as I do to a sales pipeline.
 </p>
+<div style="margin-top:24px;">
+<a style="display:inline-block;background-color:#FC5200;color:#fff;padding:5px 10px 5px 30px;font-size:11px;font-family:Helvetica,Arial,sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('https://badges.strava.com/logo-strava-echelon.png')" href="https://strava.com/athletes/173173767" target="_blank" rel="noopener noreferrer">
+  Follow me on
+  <img src="https://badges.strava.com/logo-strava.png" alt="Strava" style="margin-left:2px;vertical-align:text-bottom" height="13" width="51">
+</a>
+</div>
+
 <div class="about-meta reveal">
 <div><span>Based In</span><strong>Coimbatore, Tamil Nadu, India</strong></div>
 <div><span>Current Role</span><strong>Sales Executive, Pramura Software</strong></div>
@@ -703,6 +734,65 @@ research and product strategy.
 <div class="cert-item reveal"><h3>Campus Finalist — Digital Citizenship</h3><p>TCS iON IntelliGem · 2021</p></div>
 <div class="cert-item reveal"><h3>Java Awareness Video Creator</h3><p>Govt. of India Digital Learning Campaign</p></div>
 </div>
+</section>
+
+
+<section id="strava" class="strava-section">
+  <div class="section-head">
+    <div class="eyebrow">Beyond Work</div>
+    <h2 class="section-title">Running &amp; Strava</h2>
+  </div>
+
+  <div class="strava-grid">
+    <div class="strava-card reveal">
+      <div class="strava-profile">
+        <img class="strava-avatar"
+             src="https://dgalywyr863hv.cloudfront.net/pictures/athletes/173173767/40975647/15/large.jpg"
+             alt="Sai Esvar P on Strava">
+        <div>
+          <h3>SAI ESVAR.P</h3>
+          <p>Coimbatore, Tamil Nadu, India</p>
+        </div>
+      </div>
+
+      <p style="color:var(--ink-soft);">
+        Running is part of the consistency I bring beyond work. My recent
+        Strava activity shows a steady focus on distance, pace and endurance.
+      </p>
+
+      <div class="strava-stats">
+        <div class="strava-stat"><strong>14</strong><span>Activities · 4 Weeks</span></div>
+        <div class="strava-stat"><strong>32.6 km</strong><span>Avg Distance / Week</span></div>
+        <div class="strava-stat"><strong>2h 48m</strong><span>Avg Time / Week</span></div>
+      </div>
+
+      <div class="strava-actions">
+        <a class="strava-btn" href="https://www.strava.com/athletes/173173767" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-strava"></i> Follow me on Strava
+        </a>
+      </div>
+    </div>
+
+    <div class="strava-card reveal">
+      <div class="eyebrow">Personal Bests</div>
+      <div class="strava-best">
+        <div><strong>51s</strong><span>400m</span></div>
+        <div><strong>2:21</strong><span>½ Mile</span></div>
+        <div><strong>3:34</strong><span>1K</span></div>
+        <div><strong>6:07</strong><span>1 Mile</span></div>
+        <div><strong>21:46</strong><span>5K</span></div>
+        <div><strong>45:31</strong><span>10K</span></div>
+        <div><strong>1:12:51</strong><span>15K</span></div>
+        <div><strong>1:29:19</strong><span>10 Mile</span></div>
+      </div>
+
+      <div class="strava-actions">
+        <a class="strava-btn secondary" href="https://www.strava.com/athletes/173173767" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-running"></i> View Strava Profile
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="skills">
